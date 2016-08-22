@@ -846,6 +846,9 @@
     return NO;
 }
 
+/**
+    mathListWithRemovedPlaceholders will remove placeholders from provided `mathList`. For atoms like fractions, radicals, and inner lists we will remove the atom if one of its sublists still has a placeholder, making it invalid. The exception is a radical with a placeholder in its degree list, which will still render correctly with the degree 
+ */
 + (MTMathList *) mathListWithRemovedPlaceholders:(MTMathList *)mathList {
     MTMathList *newMathList = [[MTMathList alloc] init];
     for (MTMathAtom* atom in mathList.atoms) {
