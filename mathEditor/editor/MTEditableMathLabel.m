@@ -797,7 +797,7 @@
     MTMathAtom* atom = [self atomForCharacter:ch];
     [self.mathList insertAtom:atom atListIndex:_insertionIndex];
     _insertionIndex = _insertionIndex.next;
-    [self.mathList insertAtom:[MTMathAtomFactory placeholder] atIndex:_insertionIndex];
+    [self.mathList insertAtom:[MTMathAtomFactory placeholder] atListIndex:_insertionIndex];
     _insertionIndex = _insertionIndex.next;
     atom = [self atomForCharacter:ch];
     [self.mathList insertAtom:atom atListIndex:_insertionIndex];
