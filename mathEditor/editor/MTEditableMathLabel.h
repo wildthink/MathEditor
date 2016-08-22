@@ -97,7 +97,9 @@
 
 - (CGSize) mathDisplaySize;
 
-// Replace placeholders
+// Modify provided `mathList` by removing all placeholders.
 + (MTMathList *) mathListWithRemovedPlaceholders:(MTMathList *)mathList;
+// Determine if math list has a placeholder. 
++ (BOOL) hasPlaceholders:(MTMathList *)mathList;
 
 @end
