@@ -798,6 +798,7 @@
     [self.mathList insertAtom:atom atListIndex:_insertionIndex];
     _insertionIndex = _insertionIndex.next;
     [self.mathList insertAtom:[MTMathAtomFactory placeholder] atIndex:_insertionIndex];
+    _insertionIndex = _insertionIndex.next;
     atom = [self atomForCharacter:ch];
     [self.mathList insertAtom:atom atListIndex:_insertionIndex];
     // Don't go to the next insertion index, to start inserting before the second absolute value
