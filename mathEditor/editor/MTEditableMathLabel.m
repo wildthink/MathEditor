@@ -135,7 +135,7 @@
     self.label.textColor = textColor;
 }
 
-- (void)setTextAlignment:(MTTextAlignment *)textAlignment {
+- (void)setTextAlignment:(MTTextAlignment)textAlignment {
     self.label.textAlignment = textAlignment;
 }
 
