@@ -97,4 +97,7 @@
 
 - (CGSize) mathDisplaySize;
 
+// Replace placeholders
++ (MTMathList *) mathListWithRemovedPlaceholders:(MTMathList *)mathList;
+
 @end

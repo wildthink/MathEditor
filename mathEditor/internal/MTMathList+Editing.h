@@ -22,7 +22,4 @@
 // Get the atom at the given index. If there is none, or index is invalid returns nil.
 - (MTMathAtom*) atomAtListIndex:(MTMathListIndex*) index;
 
-// Replace placeholders
-+ (MTMathList *) mathListWithRemovedPlaceholders:(MTMathList *)mathList;
-
 @end
