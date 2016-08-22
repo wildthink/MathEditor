@@ -797,6 +797,7 @@
     MTMathAtom* atom = [self atomForCharacter:ch];
     [self.mathList insertAtom:atom atListIndex:_insertionIndex];
     _insertionIndex = _insertionIndex.next;
+    [self.mathList insertAtom:[MTMathAtomFactory placeholder] atIndex:_insertionIndex];
     atom = [self atomForCharacter:ch];
     [self.mathList insertAtom:atom atListIndex:_insertionIndex];
     // Don't go to the next insertion index, to start inserting before the second absolute value
@@ -851,7 +852,7 @@
  */
 + (MTMathList *) mathListWithRemovedPlaceholders:(MTMathList *)mathList
 {
-    MTMathList *newMathList = [[MTMathList alloc] init];
+    MTMathList *newMathList = [MTMathList new];
     for (MTMathAtom* atom in mathList.atoms) {
         MTMathAtom *atomCopy = [atom copy];
         if (atom.type == kMTMathAtomPlaceholder) {
