@@ -54,3 +54,7 @@
 }
 
 @end
+
+@implementation MTQwertyKeyboardKeyButton
+
+@end

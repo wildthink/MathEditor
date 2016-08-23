@@ -42,21 +42,34 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
 
 -(void)awakeFromNib
 {
+    [self styleAllColumns:self.scrollView.subviews];
+    
+    [self styleAllButtons:self.scrollView.subviews];
+    
+}
+
+-(void)styleAllColumns:(NSArray<__kindof UIView *> *) columns
+{
     for (UIView *columnView in self.scrollView.subviews) {
         columnView.backgroundColor = [UIColor clearColor];
-        
-        for (UIView *buttonView in columnView.subviews) {
-            if ([buttonView isKindOfClass:[UIButton class]]) {
-                [self styleButton:(UIButton *)buttonView];
-            }
-        }
     }
-    
+}
+
+-(void)styleAllButtons:(NSArray<__kindof UIView *> *) subviews
+{
+    for (UIView *subview in subviews) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            [self styleButton:(UIButton *)subview];
+        }
+        
+        [self styleAllButtons:subview.subviews];
+    }
 }
 
 -(void)styleButton:(UIButton *)button
 {
     button.layer.cornerRadius = 5;
+    button.imageView.contentMode = UIViewContentModeCenter;
 }
 
 #pragma mark - MTMathKeyboardTraits
@@ -208,10 +221,16 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
             [self.textView insertText:@"."];
             break;
         case 20:
-            [self.textView insertText:@"f(x)"];
+            [self.textView insertText:@"f"];
+            [self.textView insertText:@"("];
+            [self.textView insertText:@"x"];
+            [self.textView insertText:@")"];
             break;
         case 21:
-            [self.textView insertText:@"g(x)"];
+            [self.textView insertText:@"g"];
+            [self.textView insertText:@"("];
+            [self.textView insertText:@"x"];
+            [self.textView insertText:@")"];
             break;
         case 22:
             [self.textView insertText:@"^"];
@@ -220,7 +239,8 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
             [self.textView insertText:@","];
             break;
         case 24:
-            [self.textView insertText:@"^2"];
+            [self.textView insertText:@"^"];
+            [self.textView insertText:@"2"];
             break;
         case 25:
             [self.textView insertText:MTSymbolFractionSlash];
@@ -340,7 +360,8 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
             //
             break;
         case 64:
-            [self.textView insertText:@"log_"];
+            [self.textView insertText:@"log"];
+            [self.textView insertText:@"_"];
             break;
         case 65:
             [self.textView insertText:@"e"];
