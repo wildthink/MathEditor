@@ -36,4 +36,21 @@
     }
 }
 
+- (void) setSelected:(BOOL)selected {
+    UIColor *kMTKeyboardKeyButtonSelectedColor = [UIColor colorWithRed:0.855 green:0.929 blue:1.f alpha:1.f];
+    UIColor *kMTKeyboardKeyButtonSelectedBorderColor = [UIColor colorWithRed:0.0745 green:0.482 blue:0.984 alpha:1];
+    UIColor *kMTKeyboardKeyButtonDefaultColor = _originalBackgroundColor;
+    
+    [super setSelected:selected];
+    
+    if (selected == YES) {
+        [self setBackgroundColor:kMTKeyboardKeyButtonSelectedColor];
+        [self.layer setBorderColor:[kMTKeyboardKeyButtonSelectedBorderColor CGColor]];
+        [self.layer setBorderWidth:2.f];
+    } else {
+        [self setBackgroundColor:kMTKeyboardKeyButtonDefaultColor];
+        [self.layer setBorderWidth:0.f];
+    }
+}
+
 @end
