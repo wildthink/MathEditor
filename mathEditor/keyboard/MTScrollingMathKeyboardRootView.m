@@ -148,172 +148,207 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
     
     switch (tag) {
         case 0:
-            [self.textView insertText:@"x"];
-            break;
-        case 1:
-            [self.textView insertText:@"y"];
-            break;
-        case 2:
-            [self.textView insertText:@"z"];
-            break;
-        case 3:
-            [self.textView insertText:@","];
-            break;
-        case 4:
             [self.textView insertText:@"7"];
             break;
-        case 5:
+        case 1:
             [self.textView insertText:@"4"];
             break;
-        case 6:
+        case 2:
             [self.textView insertText:@"1"];
             break;
-        case 7:
-            [self.textView insertText:@"."];
-            break;
-        case 8:
-            [self.textView insertText:@"8"];
-            break;
-        case 9:
-            [self.textView insertText:@"5"];
-            break;
-        case 10:
-            [self.textView insertText:@"2"];
-            break;
-        case 11:
+        case 3:
             [self.textView insertText:@"0"];
             break;
-        case 12:
-            [self.textView insertText:@"9"];
+        case 4:
+            [self.textView insertText:@"8"];
             break;
-        case 13:
-            [self.textView insertText:@"6"];
+        case 5:
+            [self.textView insertText:@"5"];
             break;
-        case 14:
-            [self.textView insertText:@"3"];
+        case 6:
+            [self.textView insertText:@"2"];
             break;
-        case 15:
-            [self.textView insertText:@"="];
-            break;
-        case 16:
-            [self.textView insertText:@"÷"];
-            break;
-        case 17:
-            [self.textView insertText:@"×"];
-            break;
-        case 18:
-            [self.textView insertText:@"+"];
-            break;
-        case 19:
+        case 7:
             [self.textView insertText:@"-"];
             break;
-        case 20:
-            [self.textView insertText:@"("];
+        case 8:
+            [self.textView insertText:@"9"];
             break;
-        case 21:
-            [self.textView insertText:@"^"];
+        case 9:
+            [self.textView insertText:@"6"];
             break;
-        case 22:
+        case 10:
+            [self.textView insertText:@"3"];
+            break;
+        case 11:
+            [self.textView insertText:@"="];
+            break;
+        case 12:
+            [self.textView insertText:MTSymbolDivision];
+            break;
+        case 13:
+            [self.textView insertText:MTSymbolMultiplication];
+            break;
+        case 14:
+            [self.textView insertText:@"+"];
+            break;
+        case 15:
+            [self.textView insertText:@"-"];
+            break;
+        case 16:
+            [self.textView insertText:@"x"];
+            break;
+        case 17:
+            [self.textView insertText:@"y"];
+            break;
+        case 18:
             [self.textView insertText:MTSymbolFractionSlash];
             break;
+        case 19:
+            [self.textView insertText:@"."];
+            break;
+        case 20:
+            [self.textView insertText:@"f(x)"];
+            break;
+        case 21:
+            [self.textView insertText:@"g(x)"];
+            break;
+        case 22:
+            [self.textView insertText:@"^"];
+            break;
         case 23:
-            [self.textView insertText:MTSymbolSquareRoot];
+            [self.textView insertText:@","];
             break;
         case 24:
-            [self.textView insertText:@")"];
+            [self.textView insertText:@"^2"];
             break;
         case 25:
-            [self.textView insertText:@"_"];
+            [self.textView insertText:MTSymbolFractionSlash];
             break;
         case 26:
-            [self.textView insertText:@"||"];
+            [self.textView insertText:MTSymbolSquareRoot];
             break;
         case 27:
-            [self.textView insertText:MTSymbolCubeRoot];
+            //
             break;
         case 28:
-            [self.textView insertText:@"["];
+            [self.textView insertText:@"^"];
             break;
         case 29:
-            [self.textView insertText:@"{"];
+            [self.textView insertText:@"||"];
             break;
         case 30:
-            [self.textView insertText:@">"];
+            [self.textView insertText:MTSymbolCubeRoot];
             break;
         case 31:
-            [self.textView insertText:@"≥"];
+            //
             break;
         case 32:
-            [self.textView insertText:@"]"];
+            [self.textView insertText:@"("];
             break;
         case 33:
-            [self.textView insertText:@"}"];
+            [self.textView insertText:@"["];
             break;
         case 34:
-            [self.textView insertText:@"<"];
+            [self.textView insertText:@"{"];
             break;
         case 35:
-            [self.textView insertText:@"≤"];
+            //
             break;
         case 36:
-            [self.textView insertText:@"sin"];
+            [self.textView insertText:@")"];
             break;
         case 37:
-            [self.textView insertText:@"csc"];
+            [self.textView insertText:@"]"];
             break;
         case 38:
-            [self.textView insertText:@"π"];
+            [self.textView insertText:@"}"];
             break;
         case 39:
-            [self.textView insertText:@"°"];
+            //
             break;
         case 40:
-            [self.textView insertText:@"cos"];
+            [self.textView insertText:@">"];
             break;
         case 41:
-            [self.textView insertText:@"sec"];
+            [self.textView insertText:MTSymbolGreaterEqual];
             break;
         case 42:
-            [self.textView insertText:@"θ"];
+            [self.textView insertText:@"="];
             break;
         case 43:
-            [self.textView insertText:@"∠"];
+            //
             break;
         case 44:
-            [self.textView insertText:@"tan"];
+            [self.textView insertText:@"<"];
             break;
         case 45:
-            [self.textView insertText:@"cot"];
+            [self.textView insertText:MTSymbolLessEqual];
             break;
         case 46:
-            //
+            [self.textView insertText:MTSymbolNotEqual];
             break;
         case 47:
             //
             break;
         case 48:
-            [self.textView insertText:@"e"];
+            [self.textView insertText:@"sin"];
             break;
         case 49:
-            [self.textView insertText:@"log"];
+            [self.textView insertText:@"csc"];
             break;
         case 50:
-            //
+            [self.textView insertText:@"π"];
             break;
         case 51:
-            //
+            [self.textView insertText:MTSymbolDegree];
             break;
         case 52:
-            [self.textView insertText:@"ln"];
+            [self.textView insertText:@"cos"];
             break;
         case 53:
-            [self.textView insertText:@"log"];
-            [self.textView insertText:@"_"];
+            [self.textView insertText:@"sec"];
             break;
         case 54:
-            //
+            [self.textView insertText:@"\u0398"]; // theta
             break;
         case 55:
+            [self.textView insertText:MTSymbolAngle];
+            break;
+        case 56:
+            [self.textView insertText:@"tan"];
+            break;
+        case 57:
+            [self.textView insertText:@"cot"];
+            break;
+        case 58:
+            //
+            break;
+        case 59:
+            //
+            break;
+        case 60:
+            [self.textView insertText:@"log"];
+            break;
+        case 61:
+            [self.textView insertText:@"ln"];
+            break;
+        case 62:
+            //
+            break;
+        case 63:
+            //
+            break;
+        case 64:
+            [self.textView insertText:@"log_"];
+            break;
+        case 65:
+            [self.textView insertText:@"e"];
+            break;
+        case 66:
+            //
+            break;
+        case 67:
             //
             break;
         default:
