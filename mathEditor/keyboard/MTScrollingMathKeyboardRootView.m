@@ -17,11 +17,12 @@ static NSInteger const MATH_KEY_TAG_SMALLEST = 100;
 static NSInteger const QWERTY_KEY_TAG_SMALLEST = 1000;
 
 @interface MTScrollingMathKeyboardRootView ()
-
+    @property (nonatomic) UIButton *exponentButton;
+    @property (nonatomic) UIButton *radicalButton;
+    @property (nonatomic) UIButton *sqrtButton;
 @end
 
 @implementation MTScrollingMathKeyboardRootView {
-    
 }
 
 // Keyboard should be singleton
@@ -48,8 +49,9 @@ static NSInteger const QWERTY_KEY_TAG_SMALLEST = 1000;
 {
     [self styleAllColumns:self.scrollView.subviews];
     
-    [self styleAllButtons:self.scrollView.subviews];
-    
+    _sqrtButton = [self viewWithTag:126];
+    _exponentButton = [self viewWithTag:128];
+    _radicalButton = [self viewWithTag:130];
 }
 
 -(void)styleAllColumns:(NSArray<__kindof UIView *> *) columns
@@ -57,23 +59,6 @@ static NSInteger const QWERTY_KEY_TAG_SMALLEST = 1000;
     for (UIView *columnView in self.scrollView.subviews) {
         columnView.backgroundColor = [UIColor clearColor];
     }
-}
-
--(void)styleAllButtons:(NSArray<__kindof UIView *> *) subviews
-{
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UIButton class]]) {
-            [self styleButton:(UIButton *)subview];
-        }
-        
-        [self styleAllButtons:subview.subviews];
-    }
-}
-
--(void)styleButton:(UIButton *)button
-{
-    button.layer.cornerRadius = 5;
-    button.imageView.contentMode = UIViewContentModeCenter;
 }
 
 #pragma mark - MTMathKeyboardTraits
@@ -112,26 +97,20 @@ static NSInteger const QWERTY_KEY_TAG_SMALLEST = 1000;
 
 - (void)setExponentHighlighted:(BOOL)exponentHighlighted
 {
-//    _exponentHighlighted = exponentHighlighted;
-//    for (MTKeyboard *keyboard in _keyboards) {
-//        [keyboard setExponentState:exponentHighlighted];
-//    }
+    _exponentHighlighted = exponentHighlighted;
+    _exponentButton.selected = exponentHighlighted;
 }
 
 - (void)setSquareRootHighlighted:(BOOL)squareRootHighlighted
 {
-//    _squareRootHighlighted = squareRootHighlighted;
-//    for (MTKeyboard *keyboard in _keyboards) {
-//        [keyboard setSquareRootState:squareRootHighlighted];
-//    }
+    _squareRootHighlighted = squareRootHighlighted;
+    _sqrtButton.selected = squareRootHighlighted;
 }
 
 - (void)setRadicalHighlighted:(BOOL)radicalHighlighted
 {
-//    _radicalHighlighted = radicalHighlighted;
-//    for (MTKeyboard *keyboard in _keyboards) {
-//        [keyboard setRadicalState:radicalHighlighted];
-//    }
+    _radicalHighlighted = radicalHighlighted;
+    _radicalButton.selected = radicalHighlighted;
 }
 
 - (void)startedEditing:(UIView<UIKeyInput> *)label
