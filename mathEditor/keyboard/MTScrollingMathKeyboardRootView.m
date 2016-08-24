@@ -11,6 +11,10 @@
 #import "MTMathAtomFactory.h"
 
 static NSInteger const DEFAULT_KEYBOARD = 0;
+/// Lowest tag of a math key button
+static NSInteger const MATH_KEY_TAG_SMALLEST = 100;
+/// Lowest tag of a QWERTY key button
+static NSInteger const QWERTY_KEY_TAG_SMALLEST = 1000;
 
 @interface MTScrollingMathKeyboardRootView ()
 
@@ -149,12 +153,13 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
     UIButton *button = sender;
     NSLog(@"keyPressed: tag %tu", button.tag);
     
-    int buttonTag = button.tag - 100;
-    [self handleButtonClick:buttonTag];
-
-//    NSString* str = button.currentTitle;
-//    [self.textView insertText:str];
-
+    if (button.tag >= QWERTY_KEY_TAG_SMALLEST) {
+        int buttonTag = button.tag - QWERTY_KEY_TAG_SMALLEST;
+        [self handleQWERTYButtonClick:buttonTag];
+    } else {
+        int buttonTag = button.tag - MATH_KEY_TAG_SMALLEST;
+        [self handleButtonClick:buttonTag];
+    }
 }
 
 - (void)handleButtonClick:(int )tag {
@@ -374,6 +379,97 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
             break;
         default:
             NSLog(@"Unsupport button tag click");
+            break;
+    }
+}
+
+- (void) handleQWERTYButtonClick:(int)tag {
+    switch (tag) {
+        case 0:
+            [self.textView insertText:@"q"];
+            break;
+        case 1:
+            [self.textView insertText:@"w"];
+            break;
+        case 2:
+            [self.textView insertText:@"e"];
+            break;
+        case 3:
+            [self.textView insertText:@"r"];
+            break;
+        case 4:
+            [self.textView insertText:@"t"];
+            break;
+        case 5:
+            [self.textView insertText:@"y"];
+            break;
+        case 6:
+            [self.textView insertText:@"u"];
+            break;
+        case 7:
+            [self.textView insertText:@"i"];
+            break;
+        case 8:
+            [self.textView insertText:@"o"];
+            break;
+        case 9:
+            [self.textView insertText:@"p"];
+            break;
+        case 10:
+            [self.textView insertText:@"a"];
+            break;
+        case 11:
+            [self.textView insertText:@"s"];
+            break;
+        case 12:
+            [self.textView insertText:@"d"];
+            break;
+        case 13:
+            [self.textView insertText:@"f"];
+            break;
+        case 14:
+            [self.textView insertText:@"g"];
+            break;
+        case 15:
+            [self.textView insertText:@"h"];
+            break;
+        case 16:
+            [self.textView insertText:@"j"];
+            break;
+        case 17:
+            [self.textView insertText:@"k"];
+            break;
+        case 18:
+            [self.textView insertText:@"l"];
+            break;
+        case 19:
+            [self.textView insertText:@"z"];
+            break;
+        case 20:
+            [self.textView insertText:@"x"];
+            break;
+        case 21:
+            [self.textView insertText:@"c"];
+            break;
+        case 22:
+            [self.textView insertText:@"v"];
+            break;
+        case 23:
+            [self.textView insertText:@"b"];
+            break;
+        case 24:
+            [self.textView insertText:@"n"];
+            break;
+        case 25:
+            [self.textView insertText:@"m"];
+            break;
+        case 26:
+            [self.textView insertText:@" "];
+            break;
+        case 27:
+            [self.textView insertText:@"\n"];
+            break;
+        default:
             break;
     }
 }

@@ -988,51 +988,81 @@
                                                     <rect key="frame" x="2.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="q"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="jjs-RQ-Tyv"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrz-TQ-e4V" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="34.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="w"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="hcq-uo-yGH"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iL4-u3-oWC" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="66.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="e"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="sXy-T2-KEv"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtA-u1-LOC" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="98.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="r"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="DVx-ud-h5M"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BX-Cn-EE9" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="130.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="t"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Z1i-qp-gZP"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATW-Z4-B31" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="162.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="y"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="kkh-ZS-0Q8"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7L-pB-dRL" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="194.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="u"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="FEx-xA-aVn"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzG-2Y-I5s" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="226.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="i"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="ztI-an-r1v"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1008" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJe-l4-gHW" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="258.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="o"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="n3M-Bt-sm5"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1009" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky5-UD-xJZ" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="290.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="p"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="xVf-81-jth"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1075,46 +1105,73 @@
                                                     <rect key="frame" x="2.5" y="0.0" width="26.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="a"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mya-V3-itn"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1011" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-uv-VOr" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="33.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="s"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Ga-a8-za6"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1012" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNP-WS-wKV" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="65.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="d"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="zYu-Nv-3Se"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1013" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETX-Sk-Nid" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="97.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="f"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="yPk-C3-I8d"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1014" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA0-rC-M0D" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="129.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="g"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="3ee-jd-w3V"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1015" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsM-Ni-Lpe" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="160.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="h"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="vzU-M6-hcZ"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1016" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahy-zz-nOx" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="192.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="j"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="FSL-xd-E1B"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1017" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgV-OK-TWU" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="224.5" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="k"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="YqX-wG-ZqN"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1018" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-q4-ETS" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="257" y="0.0" width="26.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="l"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="wxu-fd-5HD"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1163,36 +1220,57 @@
                                                     <rect key="frame" x="3" y="0.0" width="26.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="z"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ir6-4H-5PL"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1020" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3q-ja-GJH" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="33" y="0.0" width="26.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="x"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="7ap-HT-zfy"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1021" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDX-S3-sdn" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="65" y="0.0" width="26.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="c"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="0gZ-au-LhY"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1022" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTw-gW-0UR" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="96" y="0.0" width="27" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="v"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="bf4-jn-d8h"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1023" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hb-al-p7v" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="127.5" y="0.0" width="26.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="b"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="rof-dh-Y5a"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1024" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASw-KQ-hHi" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="158.5" y="0.0" width="26.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="n"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="uhD-Mm-ns8"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1025" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuz-ZP-KGg" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="190.5" y="0.0" width="26.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="m"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZFy-Wz-rPO"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1233,11 +1311,17 @@
                                                     <rect key="frame" x="35" y="0.0" width="118" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="space"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="90K-Ez-Krd"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1027" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsE-hd-qrL" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="158.5" y="0.0" width="58.5" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="return"/>
+                                                    <connections>
+                                                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="hRx-RL-OQi"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

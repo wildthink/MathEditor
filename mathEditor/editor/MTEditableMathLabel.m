@@ -452,7 +452,7 @@
         return [MTMathAtom atomWithType:kMTMathAtomClose value:chStr];
     } else if (ch == ',' || ch == ';') {
         return [MTMathAtom atomWithType:kMTMathAtomPunctuation value:chStr];
-    } else if (ch == '=' || ch == '<' || ch == '>' || ch == ':' || [chStr isEqualToString:MTSymbolGreaterEqual] || [chStr isEqualToString:MTSymbolLessEqual]) {
+    } else if (ch == '=' || ch == '<' || ch == '>' || ch == ':' || [chStr isEqualToString:MTSymbolGreaterEqual] || [chStr isEqualToString:MTSymbolLessEqual] || [chStr isEqualToString:MTSymbolNotEqual]) {
         return [MTMathAtom atomWithType:kMTMathAtomRelation value:chStr];
     } else if (ch == '+' || ch == '-') {
         return [MTMathAtom atomWithType:kMTMathAtomBinaryOperator value:chStr];
