@@ -10,7 +10,6 @@
 #import "MTFontManager.h"
 #import "MTMathAtomFactory.h"
 
-static NSInteger const DEFAULT_KEYBOARD = 0;
 /// Lowest tag of a math key button
 static NSInteger const MATH_KEY_TAG_SMALLEST = 100;
 /// Lowest tag of a QWERTY key button
