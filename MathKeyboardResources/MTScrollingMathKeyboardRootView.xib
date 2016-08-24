@@ -1307,7 +1307,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kja-KU-26r" userLabel="Row 4">
                                             <rect key="frame" x="50.5" y="175" width="219" height="45"/>
                                             <subviews>
-                                                <button opaque="NO" tag="1026" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpP-W6-73H" customClass="MTQwertyKeyboardKeyButton">
+                                                <button hidden="YES" opaque="NO" tag="1026" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpP-W6-73H" customClass="MTQwertyKeyboardKeyButton">
                                                     <rect key="frame" x="35" y="0.0" width="118" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="space"/>
