@@ -135,7 +135,7 @@
     self.label.textColor = textColor;
 }
 
-- (void)setTextAlignment:(MTTextAlignment *)textAlignment {
+- (void)setTextAlignment:(MTTextAlignment)textAlignment {
     self.label.textAlignment = textAlignment;
 }
 
@@ -174,6 +174,11 @@
 - (UIView *)inputView
 {
     return self.keyboard;
+}
+
+- (UIView *)inputAccessoryView
+{
+    return self.accessoryView;
 }
 
 /**
@@ -381,6 +386,9 @@
 - (void) setKeyboardMode
 {
     self.keyboard.exponentHighlighted = NO;
+    self.keyboard.squareRootHighlighted = NO;
+    self.keyboard.radicalHighlighted = NO;
+    
     if ([_insertionIndex hasSubIndexOfType:kMTSubIndexTypeSuperscript]) {
         self.keyboard.exponentHighlighted = YES;
         self.keyboard.equalsAllowed = NO;
@@ -447,7 +455,7 @@
         return [MTMathAtom atomWithType:kMTMathAtomClose value:chStr];
     } else if (ch == ',' || ch == ';') {
         return [MTMathAtom atomWithType:kMTMathAtomPunctuation value:chStr];
-    } else if (ch == '=' || ch == '<' || ch == '>' || ch == ':' || [chStr isEqualToString:MTSymbolGreaterEqual] || [chStr isEqualToString:MTSymbolLessEqual]) {
+    } else if (ch == '=' || ch == '<' || ch == '>' || ch == ':' || [chStr isEqualToString:MTSymbolGreaterEqual] || [chStr isEqualToString:MTSymbolLessEqual] || [chStr isEqualToString:MTSymbolNotEqual]) {
         return [MTMathAtom atomWithType:kMTMathAtomRelation value:chStr];
     } else if (ch == '+' || ch == '-') {
         return [MTMathAtom atomWithType:kMTMathAtomBinaryOperator value:chStr];
@@ -792,6 +800,8 @@
     MTMathAtom* atom = [self atomForCharacter:ch];
     [self.mathList insertAtom:atom atListIndex:_insertionIndex];
     _insertionIndex = _insertionIndex.next;
+    [self.mathList insertAtom:[MTMathAtomFactory placeholder] atListIndex:_insertionIndex];
+    _insertionIndex = _insertionIndex.next;
     atom = [self atomForCharacter:ch];
     [self.mathList insertAtom:atom atListIndex:_insertionIndex];
     // Don't go to the next insertion index, to start inserting before the second absolute value
@@ -839,6 +849,143 @@
         return YES;
     }
     return NO;
+}
+
+/**
+    mathListWithRemovedPlaceholders will remove placeholders from provided `mathList`. For atoms like fractions, radicals, and inner lists we will remove the atom if one of its sublists still has a placeholder, making it invalid. The exception is a radical with a placeholder in its degree list, which will still render correctly with the degree
+ */
++ (MTMathList *) mathListWithRemovedPlaceholders:(MTMathList *)mathList
+{
+    MTMathList *newMathList = [MTMathList new];
+    for (MTMathAtom* atom in mathList.atoms) {
+        MTMathAtom *atomCopy = [atom copy];
+        if (atom.type == kMTMathAtomPlaceholder) {
+            continue;
+        }
+        
+        if (atom.superScript) {
+            MTMathList *superScript = [self mathListWithRemovedPlaceholders:atomCopy.superScript];
+            if (superScript.atoms.count > 0) {
+                atomCopy.superScript = superScript;
+            } else {
+                atomCopy.superScript = nil;
+            }
+        }
+        if (atom.subScript) {
+            MTMathList *subScript = [self mathListWithRemovedPlaceholders:atomCopy.subScript];
+            if (subScript.atoms.count > 0) {
+                atomCopy.subScript = subScript;
+            } else {
+                atomCopy.subScript = nil;
+            }
+        }
+        
+        
+        if (atom.type == kMTMathAtomRadical) {
+            MTRadical *rad = (MTRadical *)atomCopy;
+            
+            MTMathList *degree = [self mathListWithRemovedPlaceholders:rad.degree];
+            if (degree.atoms.count > 0) {
+                rad.degree = degree;
+            } else {
+                rad.degree = nil;
+            }
+            
+            MTMathList *radicand = [self mathListWithRemovedPlaceholders:rad.radicand];
+            if (radicand.atoms.count == 0) {
+                continue;
+            }
+            
+            rad.radicand = radicand;
+            [newMathList addAtom:rad];
+        } else if (atom.type == kMTMathAtomFraction) {
+            MTFraction* frac = (MTFraction*)atomCopy;
+            MTMathList *numerator = [self mathListWithRemovedPlaceholders:frac.numerator];
+            MTMathList *denominator = [self mathListWithRemovedPlaceholders:frac.denominator];
+            
+            if (numerator.atoms.count == 0 || denominator.atoms.count == 0) {
+                continue;
+            }
+            
+            frac.numerator = numerator;
+            frac.denominator = denominator;
+            [newMathList addAtom:frac];
+        } else if (atom.type == kMTMathAtomInner) {
+            MTInner* innerAtom = (MTInner *)atomCopy;
+            MTMathList *inner = [self mathListWithRemovedPlaceholders:innerAtom.innerList];
+            
+            if (inner.atoms.count == 0) {
+                continue;
+            }
+            
+            innerAtom.innerList = inner;
+            [newMathList addAtom:innerAtom];
+        } else {
+            [newMathList addAtom:atomCopy];
+        }
+    }
+    
+    return newMathList;
+}
+
+/**
+    hasPlaceholders will determine if provided `mathList` has placeholders. It is not greedy, meaning it will return as soon as it finds a placeholder.
+ */
++ (BOOL) hasPlaceholders:(MTMathList *)mathList
+{
+    BOOL foundPlaceholder = NO;
+    for (MTMathAtom* atom in mathList.atoms) {
+        if (atom.type == kMTMathAtomPlaceholder) {
+            return YES;
+        }
+        
+        if (atom.superScript) {
+            foundPlaceholder = [self hasPlaceholders:atom.superScript];
+            if (foundPlaceholder == YES) {
+                return foundPlaceholder;
+            }
+        }
+        
+        if (atom.subScript) {
+            foundPlaceholder = [self hasPlaceholders:atom.subScript];
+            if (foundPlaceholder == YES) {
+                return foundPlaceholder;
+            }
+        }
+        
+        if (atom.type == kMTMathAtomRadical) {
+            MTRadical *rad = (MTRadical *)atom;
+            
+            foundPlaceholder = [self hasPlaceholders:rad.degree];
+            if (foundPlaceholder == YES) {
+                return foundPlaceholder;
+            }
+            
+            foundPlaceholder = [self hasPlaceholders:rad.radicand];
+            if (foundPlaceholder == YES) {
+                return foundPlaceholder;
+            }
+        } else if (atom.type == kMTMathAtomFraction) {
+            MTFraction* frac = (MTFraction*)atom;
+            foundPlaceholder = [self hasPlaceholders:frac.numerator];
+            if (foundPlaceholder == YES) {
+                return foundPlaceholder;
+            }
+            
+            foundPlaceholder = [self hasPlaceholders:frac.denominator];
+            if (foundPlaceholder == YES) {
+                return foundPlaceholder;
+            }
+        } else if (atom.type == kMTMathAtomInner) {
+            MTInner* innerAtom = (MTInner *)atom;
+            foundPlaceholder = [self hasPlaceholders:innerAtom.innerList];
+            
+            if (foundPlaceholder == YES) {
+                return foundPlaceholder;
+            }
+        }
+    }
+    return foundPlaceholder;
 }
 
 #pragma mark - UITextInputTraits

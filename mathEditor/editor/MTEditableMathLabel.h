@@ -62,6 +62,12 @@
 
 @end
 
+/** 
+ */
+@protocol MTMathAccessoryView
+
+@end
+
 
 @interface MTEditableMathLabel : UIView<UIKeyInput>
 
@@ -72,6 +78,7 @@
 
 @property (nonatomic) UIImageView* cancelImage;
 @property (nonatomic, weak) id<MTEditableMathLabelDelegate> delegate;
+@property (nonatomic) UIView<MTMathAccessoryView>* accessoryView;
 @property (nonatomic, weak) UIView<MTMathKeyboard>* keyboard;
 @property (nonatomic) CGFloat fontSize;
 @property (nonatomic) CGFloat paddingBottom;
@@ -89,5 +96,10 @@
 - (void) insertMathList:(MTMathList*) list atPoint:(CGPoint) point;
 
 - (CGSize) mathDisplaySize;
+
+// Modify provided `mathList` by removing all placeholders.
++ (MTMathList *) mathListWithRemovedPlaceholders:(MTMathList *)mathList;
+// Determine if math list has a placeholder. 
++ (BOOL) hasPlaceholders:(MTMathList *)mathList;
 
 @end
