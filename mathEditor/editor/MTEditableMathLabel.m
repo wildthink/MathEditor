@@ -110,6 +110,8 @@
     
     CGRect frame = CGRectMake(self.frame.size.width - 55, (self.frame.size.height - 45)/2, 45, 45);
     self.cancelImage.frame = frame;
+
+    self.errorLabel.frame = [self errorLabelFrame];
     
     // update the flip transform
     CGAffineTransform transform = CGAffineTransformMakeTranslation(0, self.bounds.size.height);
@@ -433,12 +435,7 @@
 
 - (void) setupErrorLabel
 {
-    CGFloat errorLabelHeight = 40.f;
-    // Show it out of label bounds initially.
-    CGFloat errorLabelY = self.bounds.size.height;
-    CGRect errorLabelFrame = CGRectMake(0.f, errorLabelY, self.bounds.size.width, errorLabelHeight);
-    
-    UILabel *errorLabel = [[UILabel alloc] initWithFrame:errorLabelFrame];
+    UILabel *errorLabel = [[UILabel alloc] initWithFrame:[self errorLabelFrame]];
     errorLabel.font = [UIFont systemFontOfSize:17.f];
     errorLabel.backgroundColor = [UIColor colorWithRed:0.969 green:0.282 blue:0.282 alpha:1];
     errorLabel.textColor = [UIColor whiteColor];
@@ -451,22 +448,29 @@
     [self addSubview:errorLabel];
     
     self.errorLabel = errorLabel;
-    
-    
+}
+
+- (CGRect) errorLabelFrame
+{
+    CGFloat errorLabelHeight = 40.f;
+    // Show it out of label bounds initially.
+    CGFloat errorLabelY = self.bounds.size.height;
+    CGRect errorLabelFrame = CGRectMake(0.f, errorLabelY, self.bounds.size.width, errorLabelHeight);
+    return errorLabelFrame;
 }
 
 - (void) displayError:(NSString*) errorMessage animationDuration:(NSTimeInterval) duration
 {
     self.errorLabel.text = errorMessage;
     [UIView animateWithDuration:duration animations:^{
-        self.errorLabel.frame = CGRectOffset(self.errorLabel.frame, 0.0, -self.errorLabel.frame.size.height);
+        self.errorLabel.frame = CGRectMake(0.0, self.bounds.size.height - self.errorLabel.frame.size.height, self.errorLabel.frame.size.width, self.errorLabel.frame.size.height);
     }];
 }
 
 - (void) hideError:(NSTimeInterval)duration
 {
     [UIView animateWithDuration:duration animations:^{
-        self.errorLabel.frame = CGRectOffset(self.errorLabel.frame, 0.0, self.errorLabel.frame.size.height);
+        self.errorLabel.frame = CGRectMake(0.0, self.bounds.size.height, self.errorLabel.frame.size.width, self.errorLabel.frame.size.height);
     }];
 }
 
