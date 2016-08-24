@@ -100,6 +100,8 @@
     
     // start with an empty math list
     self.mathList = [MTMathList new];
+    
+    [self setupErrorLabel];
 }
 
 -(void)layoutSubviews
@@ -425,6 +427,47 @@
 - (void) enableTap:(BOOL) enabled
 {
     self.tapGestureRecognizer.enabled = enabled;
+}
+
+#pragma mark - Error display
+
+- (void) setupErrorLabel
+{
+    CGFloat errorLabelHeight = 40.f;
+    // Show it out of label bounds initially.
+    CGFloat errorLabelY = self.bounds.size.height;
+    CGRect errorLabelFrame = CGRectMake(0.f, errorLabelY, self.bounds.size.width, errorLabelHeight);
+    
+    UILabel *errorLabel = [[UILabel alloc] initWithFrame:errorLabelFrame];
+    errorLabel.font = [UIFont systemFontOfSize:17.f];
+    errorLabel.backgroundColor = [UIColor colorWithRed:0.969 green:0.282 blue:0.282 alpha:1];
+    errorLabel.textColor = [UIColor whiteColor];
+    errorLabel.textAlignment = NSTextAlignmentCenter;
+    errorLabel.adjustsFontSizeToFitWidth = true;
+    errorLabel.minimumFontSize = 12.f;
+    errorLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    // We do this so the error label is not visible offscreen
+    self.layer.masksToBounds = YES;
+    [self addSubview:errorLabel];
+    
+    self.errorLabel = errorLabel;
+    
+    
+}
+
+- (void) displayError:(NSString*) errorMessage animationDuration:(NSTimeInterval) duration
+{
+    self.errorLabel.text = errorMessage;
+    [UIView animateWithDuration:duration animations:^{
+        self.errorLabel.frame = CGRectOffset(self.errorLabel.frame, 0.0, -self.errorLabel.frame.size.height);
+    }];
+}
+
+- (void) hideError:(NSTimeInterval)duration
+{
+    [UIView animateWithDuration:duration animations:^{
+        self.errorLabel.frame = CGRectOffset(self.errorLabel.frame, 0.0, self.errorLabel.frame.size.height);
+    }];
 }
 
 #pragma mark - UIKeyInput
