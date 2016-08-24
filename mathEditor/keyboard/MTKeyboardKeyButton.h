@@ -11,3 +11,6 @@
 @interface MTKeyboardKeyButton : UIButton
 
 @end
+
+@interface MTQwertyKeyboardKeyButton : MTKeyboardKeyButton
+@end
