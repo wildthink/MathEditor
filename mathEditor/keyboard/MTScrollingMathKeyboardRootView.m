@@ -246,6 +246,8 @@ static NSInteger const QWERTY_KEY_TAG_SMALLEST = 1000;
         case 24:
             [self.textView insertText:@"^"];
             [self.textView insertText:@"2"];
+            // Inserting another exponent should bring the level back down to regular
+            [self.textView insertText:@"^"];
             break;
         case 25:
             [self.textView insertText:MTSymbolFractionSlash];
