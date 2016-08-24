@@ -386,6 +386,9 @@
 - (void) setKeyboardMode
 {
     self.keyboard.exponentHighlighted = NO;
+    self.keyboard.squareRootHighlighted = NO;
+    self.keyboard.radicalHighlighted = NO;
+    
     if ([_insertionIndex hasSubIndexOfType:kMTSubIndexTypeSuperscript]) {
         self.keyboard.exponentHighlighted = YES;
         self.keyboard.equalsAllowed = NO;

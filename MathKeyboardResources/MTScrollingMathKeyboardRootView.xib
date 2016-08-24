@@ -377,6 +377,14 @@
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="tym-DC-guh"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" tag="125" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieK-Er-Ybc" userLabel="Button" customClass="MTKeyboardKeyButton">
+                                            <rect key="frame" x="1" y="62" width="45" height="45"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <state key="normal" image="Fraction blue"/>
+                                            <connections>
+                                                <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ixy-2s-Xld"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" tag="126" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37c-zV-jxp" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -390,14 +398,6 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="gs9-q3-dTf"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" tag="125" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieK-Er-Ybc" userLabel="Button" customClass="MTKeyboardKeyButton">
-                                            <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <state key="normal" image="Fraction blue"/>
-                                            <connections>
-                                                <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ixy-2s-Xld"/>
                                             </connections>
                                         </button>
                                     </subviews>
