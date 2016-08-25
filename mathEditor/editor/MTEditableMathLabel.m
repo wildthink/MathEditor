@@ -247,10 +247,21 @@
 
 - (void) startEditing
 {
+    #if DEBUG
+    NSDate *start = [NSDate date];
+    #endif
+    
     if (![self isFirstResponder]) {
 		// Become first responder state (which shows software keyboard, if applicable).
         [self becomeFirstResponder];
     }
+    
+    #if DEBUG
+    NSDate *methodFinish = [NSDate date];
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:start];
+    
+    NSLog(@"Execution Time for startEditing: %f", executionTime);
+    #endif
 }
 
 /**

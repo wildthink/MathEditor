@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTEditableMathLabel.h"
 
 @class MTMathSocraticInputAccessoryView;
 
 @protocol MTMathSocraticInputAccessoryViewDelegate <NSObject>
+
+@optional
 
 - (void) inputAccessoryViewSearchButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView;
 
@@ -20,7 +23,7 @@
 
 @end
 
-@interface MTMathSocraticInputAccessoryView : UIView
+@interface MTMathSocraticInputAccessoryView : UIView <MTMathAccessoryView>
 
 + (MTMathSocraticInputAccessoryView *)defaultAccessoryView;
 
