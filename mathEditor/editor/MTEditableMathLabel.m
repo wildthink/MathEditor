@@ -448,6 +448,10 @@
     [self addSubview:errorLabel];
     
     self.errorLabel = errorLabel;
+    
+    // Initialize error label variables with default values
+    self.autoHidesError = NO;
+    self.timeToHideError = 2.0;
 }
 
 - (CGRect) errorLabelFrame
@@ -464,6 +468,13 @@
     self.errorLabel.text = errorMessage;
     [UIView animateWithDuration:duration animations:^{
         self.errorLabel.frame = CGRectMake(0.0, self.bounds.size.height - self.errorLabel.frame.size.height, self.errorLabel.frame.size.width, self.errorLabel.frame.size.height);
+    } completion:^(BOOL finished) {
+        if (self.autoHidesError == YES) {
+            dispatch_time_t dispatchTime = dispatch_time(DISPATCH_TIME_NOW, self.timeToHideError * NSEC_PER_SEC);
+            dispatch_after(dispatchTime, dispatch_get_main_queue(), ^{
+                [self hideError:duration];
+            });
+        }
     }];
 }
 

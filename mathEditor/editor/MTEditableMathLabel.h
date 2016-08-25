@@ -104,6 +104,8 @@
 + (BOOL) hasPlaceholders:(MTMathList *)mathList;
 
 // Error display
+@property (nonatomic) BOOL autoHidesError;
+@property (nonatomic) NSTimeInterval timeToHideError;
 - (void) displayError:(NSString*) errorMessage animationDuration:(NSTimeInterval)duration;
 - (void) hideError:(NSTimeInterval)duration;
 
