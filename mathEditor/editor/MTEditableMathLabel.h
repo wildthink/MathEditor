@@ -80,6 +80,7 @@
 @property (nonatomic, weak) id<MTEditableMathLabelDelegate> delegate;
 @property (nonatomic) UIView<MTMathAccessoryView>* accessoryView;
 @property (nonatomic, weak) UIView<MTMathKeyboard>* keyboard;
+@property (nonatomic) UILabel* errorLabel;
 @property (nonatomic) CGFloat fontSize;
 @property (nonatomic) CGFloat paddingBottom;
 @property (nonatomic) CGFloat paddingTop;
@@ -101,5 +102,11 @@
 + (MTMathList *) mathListWithRemovedPlaceholders:(MTMathList *)mathList;
 // Determine if math list has a placeholder. 
 + (BOOL) hasPlaceholders:(MTMathList *)mathList;
+
+// Error display
+@property (nonatomic) BOOL autoHidesError;
+@property (nonatomic) NSTimeInterval timeToHideError;
+- (void) displayError:(NSString*) errorMessage animationDuration:(NSTimeInterval)duration;
+- (void) hideError:(NSTimeInterval)duration;
 
 @end

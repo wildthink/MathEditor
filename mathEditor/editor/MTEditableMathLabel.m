@@ -33,6 +33,7 @@
     MTMathListIndex* _insertionIndex;
     CGAffineTransform _flipTransform;
     NSMutableArray* _indicesToHighlight;
+    BOOL _showingError;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -100,6 +101,8 @@
     
     // start with an empty math list
     self.mathList = [MTMathList new];
+    
+    [self setupErrorLabel];
 }
 
 -(void)layoutSubviews
@@ -108,6 +111,8 @@
     
     CGRect frame = CGRectMake(self.frame.size.width - 55, (self.frame.size.height - 45)/2, 45, 45);
     self.cancelImage.frame = frame;
+
+    self.errorLabel.frame = [self errorLabelFrame];
     
     // update the flip transform
     CGAffineTransform transform = CGAffineTransformMakeTranslation(0, self.bounds.size.height);
@@ -425,6 +430,71 @@
 - (void) enableTap:(BOOL) enabled
 {
     self.tapGestureRecognizer.enabled = enabled;
+}
+
+#pragma mark - Error display
+
+- (void) setupErrorLabel
+{
+    UILabel *errorLabel = [[UILabel alloc] initWithFrame:[self errorLabelFrame]];
+    errorLabel.font = [UIFont systemFontOfSize:17.f];
+    errorLabel.backgroundColor = [UIColor colorWithRed:0.969 green:0.282 blue:0.282 alpha:1];
+    errorLabel.textColor = [UIColor whiteColor];
+    errorLabel.textAlignment = NSTextAlignmentCenter;
+    errorLabel.adjustsFontSizeToFitWidth = true;
+    errorLabel.minimumFontSize = 12.f;
+    errorLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    // We do this so the error label is not visible offscreen
+    self.layer.masksToBounds = YES;
+    [self addSubview:errorLabel];
+    
+    self.errorLabel = errorLabel;
+    
+    // Initialize error label variables with default values
+    self.autoHidesError = YES;
+    self.timeToHideError = 2.0;
+    _showingError = NO;
+}
+
+- (CGRect) errorLabelFrame
+{
+    CGFloat errorLabelHeight = 40.f;
+    // Show it out of label bounds initially.
+    CGFloat errorLabelY = self.bounds.size.height;
+    CGRect errorLabelFrame = CGRectMake(0.f, errorLabelY, self.bounds.size.width, errorLabelHeight);
+    return errorLabelFrame;
+}
+
+- (void) displayError:(NSString*) errorMessage animationDuration:(NSTimeInterval) duration
+{
+    if (_showingError == YES) {
+        return;
+    }
+    _showingError = YES;
+    
+    self.errorLabel.text = errorMessage;
+    [UIView animateWithDuration:duration animations:^{
+        self.errorLabel.frame = CGRectMake(0.0, self.bounds.size.height - self.errorLabel.frame.size.height, self.errorLabel.frame.size.width, self.errorLabel.frame.size.height);
+    } completion:^(BOOL finished) {
+        if (self.autoHidesError == YES) {
+            dispatch_time_t dispatchTime = dispatch_time(DISPATCH_TIME_NOW, self.timeToHideError * NSEC_PER_SEC);
+            dispatch_after(dispatchTime, dispatch_get_main_queue(), ^{
+                [self hideError:duration];
+            });
+        }
+    }];
+}
+
+- (void) hideError:(NSTimeInterval)duration
+{
+    if (_showingError == NO) {
+        return;
+    }
+    _showingError = NO;
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.errorLabel.frame = CGRectMake(0.0, self.bounds.size.height, self.errorLabel.frame.size.width, self.errorLabel.frame.size.height);
+    }];
 }
 
 #pragma mark - UIKeyInput
