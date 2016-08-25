@@ -30,7 +30,10 @@
     self.mathLabel.textAlignment = kMTTextAlignmentCenter;
     self.mathLabel.keyboard = [MTScrollingMathKeyboardRootView sharedInstance];
 //    self.mathLabel.keyboard = [MTMathKeyboardRootView sharedInstance];
-    self.mathLabel.accessoryView = [MTMathSocraticInputAccessoryView defaultAccessoryView];
+
+    MTMathSocraticInputAccessoryView *accessoryView = [MTMathSocraticInputAccessoryView defaultAccessoryView];
+    accessoryView.delegate = self;
+    self.mathLabel.accessoryView = accessoryView;
     self.mathLabel.delegate = self;
     [self.mathLabel enableTap:YES];
 }
@@ -82,6 +85,20 @@
 - (void)didBeginEditing:(MTEditableMathLabel *)label
 {
     self.placeholderLabel.hidden = YES;
+}
+
+#pragma mark MTMathSocraticInputAccessoryViewDelegate
+
+- (void) inputAccessoryViewSearchButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView {
+    [self.mathLabel resignFirstResponder];
+}
+
+- (void) inputAccessoryViewDeleteButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView {
+    [self.mathLabel deleteBackward];
+}
+
+- (void) inputAccessoryViewClearButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView {
+    [self.mathLabel clear];
 }
 
 @end

@@ -13,6 +13,8 @@
 
 @protocol MTMathSocraticInputAccessoryViewDelegate <NSObject>
 
+@optional
+
 - (void) inputAccessoryViewSearchButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView;
 
 - (void) inputAccessoryViewDeleteButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView;
