@@ -451,7 +451,7 @@
     self.errorLabel = errorLabel;
     
     // Initialize error label variables with default values
-    self.autoHidesError = NO;
+    self.autoHidesError = YES;
     self.timeToHideError = 2.0;
     _showingError = NO;
 }
