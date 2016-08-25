@@ -12,6 +12,7 @@
 #import "MTViewController.h"
 #import "MTMathKeyboardRootView.h"
 #import "MTScrollingMathKeyboardRootView.h"
+#import "MTMathSocraticInputAccessoryView.h"
 
 @interface MTViewController () <MTEditableMathLabelDelegate>
 
@@ -29,6 +30,7 @@
     self.mathLabel.textAlignment = kMTTextAlignmentCenter;
     self.mathLabel.keyboard = [MTScrollingMathKeyboardRootView sharedInstance];
 //    self.mathLabel.keyboard = [MTMathKeyboardRootView sharedInstance];
+    self.mathLabel.accessoryView = [MTMathSocraticInputAccessoryView defaultAccessoryView];
     self.mathLabel.delegate = self;
     [self.mathLabel enableTap:YES];
 }

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTEditableMathLabel.h"
 
 @class MTMathSocraticInputAccessoryView;
 
@@ -20,7 +21,7 @@
 
 @end
 
-@interface MTMathSocraticInputAccessoryView : UIView
+@interface MTMathSocraticInputAccessoryView : UIView <MTMathAccessoryView>
 
 + (MTMathSocraticInputAccessoryView *)defaultAccessoryView;
 
