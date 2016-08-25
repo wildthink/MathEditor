@@ -33,6 +33,7 @@
     MTMathListIndex* _insertionIndex;
     CGAffineTransform _flipTransform;
     NSMutableArray* _indicesToHighlight;
+    BOOL _showingError;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -452,6 +453,7 @@
     // Initialize error label variables with default values
     self.autoHidesError = NO;
     self.timeToHideError = 2.0;
+    _showingError = NO;
 }
 
 - (CGRect) errorLabelFrame
@@ -465,6 +467,11 @@
 
 - (void) displayError:(NSString*) errorMessage animationDuration:(NSTimeInterval) duration
 {
+    if (_showingError == YES) {
+        return;
+    }
+    _showingError = YES;
+    
     self.errorLabel.text = errorMessage;
     [UIView animateWithDuration:duration animations:^{
         self.errorLabel.frame = CGRectMake(0.0, self.bounds.size.height - self.errorLabel.frame.size.height, self.errorLabel.frame.size.width, self.errorLabel.frame.size.height);
@@ -480,6 +487,11 @@
 
 - (void) hideError:(NSTimeInterval)duration
 {
+    if (_showingError == NO) {
+        return;
+    }
+    _showingError = NO;
+    
     [UIView animateWithDuration:duration animations:^{
         self.errorLabel.frame = CGRectMake(0.0, self.bounds.size.height, self.errorLabel.frame.size.width, self.errorLabel.frame.size.height);
     }];
