@@ -129,7 +129,7 @@ static NSInteger const QWERTY_KEY_TAG_SMALLEST = 1000;
     [self playClickForCustomKeyTap];
     
     UIButton *button = sender;
-    NSLog(@"keyPressed: tag %tu", button.tag);
+//    NSLog(@"keyPressed: tag %tu", button.tag);
     
     if (button.tag >= QWERTY_KEY_TAG_SMALLEST) {
         int buttonTag = button.tag - QWERTY_KEY_TAG_SMALLEST;

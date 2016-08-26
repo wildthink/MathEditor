@@ -12,6 +12,7 @@
 #import "MTViewController.h"
 #import "MTMathKeyboardRootView.h"
 #import "MTScrollingMathKeyboardRootView.h"
+#import "MTMathSocraticInputAccessoryView.h"
 
 @interface MTViewController () <MTEditableMathLabelDelegate>
 
@@ -29,6 +30,10 @@
     self.mathLabel.textAlignment = kMTTextAlignmentCenter;
     self.mathLabel.keyboard = [MTScrollingMathKeyboardRootView sharedInstance];
 //    self.mathLabel.keyboard = [MTMathKeyboardRootView sharedInstance];
+
+    MTMathSocraticInputAccessoryView *accessoryView = [MTMathSocraticInputAccessoryView defaultAccessoryView];
+    accessoryView.delegate = self;
+    self.mathLabel.accessoryView = accessoryView;
     self.mathLabel.delegate = self;
     [self.mathLabel enableTap:YES];
 }
@@ -80,6 +85,20 @@
 - (void)didBeginEditing:(MTEditableMathLabel *)label
 {
     self.placeholderLabel.hidden = YES;
+}
+
+#pragma mark MTMathSocraticInputAccessoryViewDelegate
+
+- (void) inputAccessoryViewSearchButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView {
+    [self.mathLabel resignFirstResponder];
+}
+
+- (void) inputAccessoryViewDeleteButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView {
+    [self.mathLabel deleteBackward];
+}
+
+- (void) inputAccessoryViewClearButtonTapped:(MTMathSocraticInputAccessoryView *)inputAccessoryView {
+    [self.mathLabel clear];
 }
 
 @end
