@@ -880,7 +880,9 @@
 - (void) deleteBackward
 {    
     // delete the last atom from the list
+    [self adjustInsertionIndexBasedOnPreviousIndex];
     MTMathListIndex* prevIndex = _insertionIndex.previous;
+    
     if (self.hasText && prevIndex) {
         [self.mathList removeAtomAtListIndex:prevIndex];
         if (prevIndex.finalSubIndexType == kMTSubIndexTypeNucleus) {
@@ -893,23 +895,151 @@
             }
         }
         _insertionIndex = prevIndex;
-        if (_insertionIndex.isAtBeginningOfLine && _insertionIndex.subIndexType != kMTSubIndexTypeNone) {
-            // We have deleted to the beginning of the line and it is not the outermost line
-            MTMathAtom* atom = [self.mathList atomAtListIndex:_insertionIndex];
-            if (!atom) {
-                // add a placeholder if we deleted everything in the list
-                atom = [MTMathAtomFactory placeholder];
-                // mark the placeholder as selected since that is the current insertion point.
-                atom.nucleus = MTSymbolBlackSquare;
-                [self.mathList insertAtom:atom atListIndex:_insertionIndex];
+
+        [self postDeletionCommon];
+        
+    } else if (self.hasText && [_insertionIndex isAtBeginningOfLine] == YES && (_insertionIndex.finalSubIndexType == kMTSubIndexTypeSuperscript || _insertionIndex.finalSubIndexType == kMTSubIndexTypeSubscript)) {
+        // We are at the beginning of a line in superscript
+        [self.mathList removeAtomAtListIndex:_insertionIndex];
+        MTMathListIndex* downIndex = _insertionIndex.levelDown;
+        // We step down one level from the superscript to lower level
+        MTMathAtom *atomAtDownIndex = [self.mathList atomAtListIndex:downIndex];
+        
+        if (atomAtDownIndex != nil) {
+            if (_insertionIndex.finalSubIndexType == kMTSubIndexTypeSuperscript) {
+                // Remove the superscript
+                atomAtDownIndex.superScript = nil;
+            }
+            if (_insertionIndex.finalSubIndexType == kMTSubIndexTypeSubscript) {
+                // Remove the entire fraction
+                atomAtDownIndex.subScript = nil;
             }
         }
         
-        self.label.mathList = self.mathList;
-        [self insertionPointChanged];
-        if ([self.delegate respondsToSelector:@selector(textModified:)]) {
-            [self.delegate textModified:self];
+        
+        if ([self.mathList atomAtListIndex:downIndex] != nil) {
+            // Advance the insertion index one so we go to the end of the lower level's atom
+            _insertionIndex = downIndex.next;
+        } else {
+            _insertionIndex = downIndex;
         }
+        
+        [self postDeletionCommon];
+    } else if (self.hasText && [_insertionIndex isAtBeginningOfLine] == YES && _insertionIndex.finalSubIndexType == kMTSubIndexTypeRadicand) {
+        MTMathListIndex* downIndex = _insertionIndex.levelDown;
+        
+        MTMathListIndex* degreeIndex = [downIndex levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:kMTSubIndexTypeDegree];
+        MTMathAtom* degreeAtom = [self.mathList atomAtListIndex:degreeIndex];
+        if (degreeAtom != nil) {
+            _insertionIndex = [self getLastAtomInLevel:degreeIndex];
+            [self postDeletionCommon];
+            if (degreeAtom.type != kMTMathAtomPlaceholder) {
+                [self deleteBackward];
+            }
+            return;
+        }
+        
+        // Remove placeholder
+        [self.mathList removeAtomAtListIndex:_insertionIndex];
+        
+        // We step down one level from the radicand to lower level
+        MTMathAtom* atomAtDownIndex = [self.mathList atomAtListIndex:downIndex];
+        [self.mathList removeAtomAtListIndex:downIndex];
+        
+        _insertionIndex = downIndex;
+        [self postDeletionCommon];
+    } else if (self.hasText && [_insertionIndex isAtBeginningOfLine] == YES && (_insertionIndex.finalSubIndexType == kMTSubIndexTypeDegree || _insertionIndex.finalSubIndexType == kMTSubIndexTypeNumerator)) {
+        MTMathListIndex* downIndex = _insertionIndex.levelDown;
+        
+        [self.mathList removeAtomAtListIndex:_insertionIndex];
+        
+        // We step down one level from the degree to lower level
+        MTMathAtom* atomAtDownIndex = [self.mathList atomAtListIndex:downIndex];
+        
+        // This should never be the case, but let's be safe just in case
+        if (atomAtDownIndex != nil) {
+            [self.mathList removeAtomAtListIndex:downIndex];
+        }
+        
+        _insertionIndex = downIndex;
+        [self postDeletionCommon];
+    } else if (self.hasText && [_insertionIndex isAtBeginningOfLine] == YES && _insertionIndex.finalSubIndexType == kMTSubIndexTypeDenominator) {
+        MTMathListIndex* downIndex = _insertionIndex.levelDown;
+        MTMathListIndex* numeratorIndex = [downIndex levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:kMTSubIndexTypeNumerator];
+        MTMathAtom* atomAtNumeratorIndex = [self.mathList atomAtListIndex:numeratorIndex];
+        if (atomAtNumeratorIndex != nil) {
+            _insertionIndex = [self getLastAtomInLevel:numeratorIndex];
+            [self postDeletionCommon];
+            if (atomAtNumeratorIndex.type != kMTMathAtomPlaceholder) {
+                [self deleteBackward];
+            }
+        }
+    }
+}
+
+- (void) adjustInsertionIndexBasedOnPreviousIndex
+{
+    MTMathListIndex* prevIndex = _insertionIndex.previous;
+    if (prevIndex == nil) {
+        return;
+    }
+    
+    NSArray *subIndexTypesInOrder = @[
+        [NSNumber numberWithInt:kMTSubIndexTypeSubscript],
+        [NSNumber numberWithInt:kMTSubIndexTypeSuperscript],
+        [NSNumber numberWithInt:kMTSubIndexTypeRadicand],
+        [NSNumber numberWithInt:kMTSubIndexTypeDegree],
+        [NSNumber numberWithInt:kMTSubIndexTypeDenominator],
+        [NSNumber numberWithInt:kMTSubIndexTypeNumerator]];
+    
+    for (NSNumber *subIndexType in subIndexTypesInOrder) {
+        
+        MTMathListIndex* levelUpIndex = [prevIndex levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:(MTMathListSubIndexType)subIndexType.intValue];
+        MTMathAtom* atom = [self.mathList atomAtListIndex:levelUpIndex];
+        
+        if (atom != nil) {
+            _insertionIndex = [self getLastAtomInLevel:levelUpIndex];
+            [self adjustInsertionIndexBasedOnPreviousIndex];
+            break;
+        }
+    }
+    
+    return;
+}
+
+- (MTMathListIndex*) getLastAtomInLevel:(MTMathListIndex*) startingIndex
+{
+    MTMathListIndex* nextIndex = startingIndex.next;
+    MTMathAtom* nextAtom = [self.mathList atomAtListIndex:startingIndex];
+    while (nextAtom != nil) {
+        nextAtom = [self.mathList atomAtListIndex:nextIndex];
+        if (nextAtom != nil) {
+            nextIndex = nextIndex.next;
+        }
+    }
+    
+    return nextIndex;
+}
+
+- (void) postDeletionCommon
+{
+    if (_insertionIndex.isAtBeginningOfLine && _insertionIndex.subIndexType != kMTSubIndexTypeNone) {
+        // We have deleted to the beginning of the line and it is not the outermost line
+        MTMathAtom* atom = [self.mathList atomAtListIndex:_insertionIndex];
+        if (!atom) {
+            // add a placeholder if we deleted everything in the list
+            atom = [MTMathAtomFactory placeholder];
+            // mark the placeholder as selected since that is the current insertion point.
+            atom.nucleus = MTSymbolBlackSquare;
+            [self.mathList insertAtom:atom atListIndex:_insertionIndex];
+        }
+    }
+    
+//    [self adjustInsertionIndexBasedOnPreviousIndex];
+    self.label.mathList = self.mathList;
+    [self insertionPointChanged];
+    if ([self.delegate respondsToSelector:@selector(textModified:)]) {
+        [self.delegate textModified:self];
     }
 }
 
