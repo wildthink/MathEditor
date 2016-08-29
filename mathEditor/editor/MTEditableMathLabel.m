@@ -1075,7 +1075,6 @@
         }
     }
     
-//    [self adjustInsertionIndexBasedOnPreviousIndex];
     self.label.mathList = self.mathList;
     [self insertionPointChanged];
     if ([self.delegate respondsToSelector:@selector(textModified:)]) {
