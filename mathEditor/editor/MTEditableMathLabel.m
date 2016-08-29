@@ -890,8 +890,12 @@
 
 - (void) deleteBackward
 {    
-    // delete the last atom from the list
+    // Adjust insertion point based on the previous index.
+    [self adjustInsertionIndexBasedOnPreviousIndex];
+    
     MTMathListIndex* prevIndex = _insertionIndex.previous;
+    
+    // delete the last atom from the list
     if (self.hasText && prevIndex) {
         [self.mathList removeAtomAtListIndex:prevIndex];
         if (prevIndex.finalSubIndexType == kMTSubIndexTypeNucleus) {
@@ -904,23 +908,177 @@
             }
         }
         _insertionIndex = prevIndex;
-        if (_insertionIndex.isAtBeginningOfLine && _insertionIndex.subIndexType != kMTSubIndexTypeNone) {
-            // We have deleted to the beginning of the line and it is not the outermost line
-            MTMathAtom* atom = [self.mathList atomAtListIndex:_insertionIndex];
-            if (!atom) {
-                // add a placeholder if we deleted everything in the list
-                atom = [MTMathAtomFactory placeholder];
-                // mark the placeholder as selected since that is the current insertion point.
-                atom.nucleus = MTSymbolBlackSquare;
-                [self.mathList insertAtom:atom atListIndex:_insertionIndex];
+
+        [self postDeletionCommon];
+        
+    } else if (self.hasText && [_insertionIndex isAtBeginningOfLine] == YES && (_insertionIndex.finalSubIndexType == kMTSubIndexTypeSuperscript || _insertionIndex.finalSubIndexType == kMTSubIndexTypeSubscript)) {
+        // Handle beginning of line at superscript or subscript
+        
+        // We are at the beginning of a line in super/subscript. Remove the placeholder
+        [self.mathList removeAtomAtListIndex:_insertionIndex];
+        
+        // We step down one level from the superscript to lower level
+        MTMathListIndex* downIndex = _insertionIndex.levelDown;
+        MTMathAtom *atomAtDownIndex = [self.mathList atomAtListIndex:downIndex];
+        
+        // Modify the atom at the lower level so it no longer has a superscript or subscript
+        if (atomAtDownIndex != nil) {
+            if (_insertionIndex.finalSubIndexType == kMTSubIndexTypeSuperscript) {
+                // Remove the superscript
+                atomAtDownIndex.superScript = nil;
+            }
+            if (_insertionIndex.finalSubIndexType == kMTSubIndexTypeSubscript) {
+                // Remove the entire fraction
+                atomAtDownIndex.subScript = nil;
             }
         }
         
-        self.label.mathList = self.mathList;
-        [self insertionPointChanged];
-        if ([self.delegate respondsToSelector:@selector(textModified:)]) {
-            [self.delegate textModified:self];
+        
+        if ([self.mathList atomAtListIndex:downIndex] != nil) {
+            // Advance the insertion index one so we go to the end of the lower level's atom
+            _insertionIndex = downIndex.next;
+        } else {
+            // If there is no atom at the lower level, just remain.
+            _insertionIndex = downIndex;
         }
+        
+        [self postDeletionCommon];
+    } else if (self.hasText && [_insertionIndex isAtBeginningOfLine] == YES && _insertionIndex.finalSubIndexType == kMTSubIndexTypeRadicand) {
+        // Handle the middle of a radical. You can think of the degree subindex as an extension of the middle of the radicand.
+        // So if we remove from the beginning of a radicand, the cursor should move to the degree. If there is no degree, just remove the radical.
+        
+        MTMathListIndex* downIndex = _insertionIndex.levelDown;
+        
+        // Handle the degree case
+        MTMathListIndex* degreeIndex = [downIndex levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:kMTSubIndexTypeDegree];
+        MTMathAtom* degreeAtom = [self.mathList atomAtListIndex:degreeIndex];
+        if (degreeAtom != nil) {
+            _insertionIndex = [self getLastAtomInLevel:degreeIndex];
+            [self postDeletionCommon];
+            if (degreeAtom.type != kMTMathAtomPlaceholder) {
+                [self deleteBackward];
+            }
+            return;
+        }
+        
+        // Handle no degree case. Remove the radical
+        // Remove placeholder first
+        [self.mathList removeAtomAtListIndex:_insertionIndex];
+        
+        // We step down one level from the radicand to lower level
+        MTMathAtom* atomAtDownIndex = [self.mathList atomAtListIndex:downIndex];
+        [self.mathList removeAtomAtListIndex:downIndex];
+        
+        _insertionIndex = downIndex;
+        [self postDeletionCommon];
+    } else if (self.hasText && [_insertionIndex isAtBeginningOfLine] == YES && (_insertionIndex.finalSubIndexType == kMTSubIndexTypeDegree || _insertionIndex.finalSubIndexType == kMTSubIndexTypeNumerator)) {
+        // Degree and Numerator cases are similar to sub/superscripts. Go down a level, and remove the atom there. Basically, if we're in degree and numerator cases at the beginning of a line, remove the radical or fraction.
+        
+        MTMathListIndex* downIndex = _insertionIndex.levelDown;
+        
+        [self.mathList removeAtomAtListIndex:_insertionIndex];
+        
+        // We step down one level from the degree to lower level
+        MTMathAtom* atomAtDownIndex = [self.mathList atomAtListIndex:downIndex];
+        
+        // This should never be the case, but let's be safe just in case
+        if (atomAtDownIndex != nil) {
+            [self.mathList removeAtomAtListIndex:downIndex];
+        }
+        
+        _insertionIndex = downIndex;
+        [self postDeletionCommon];
+    } else if (self.hasText && [_insertionIndex isAtBeginningOfLine] == YES && _insertionIndex.finalSubIndexType == kMTSubIndexTypeDenominator) {
+        // The case of a denominator is similar to the relationship between radicand and degree. If we delete from the beginning of a denominator, move up to the numerator and remove last thing there. If there is only a placeholder there, just move to the numerator without removing anything.
+        
+        MTMathListIndex* downIndex = _insertionIndex.levelDown;
+        MTMathListIndex* numeratorIndex = [downIndex levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:kMTSubIndexTypeNumerator];
+        MTMathAtom* atomAtNumeratorIndex = [self.mathList atomAtListIndex:numeratorIndex];
+        if (atomAtNumeratorIndex != nil) {
+            _insertionIndex = [self getLastAtomInLevel:numeratorIndex];
+            [self postDeletionCommon];
+            if (atomAtNumeratorIndex.type != kMTMathAtomPlaceholder) {
+                [self deleteBackward];
+            }
+        }
+    }
+}
+
+/**
+    Adjust `_insertionIndex` based on the previous index on the same level. This is important in the cases where user's cursor is right after a complex atom like radical, subscript, superscript, etc.
+    We move in the order specified by `subIndexTypesInOrder`. For example, if the user has a cursor after ( (6/5)^2[CURSOR] ), after hitting delete we will delete from superscript. Denominator would be next, then numerator.
+ 
+    This function is only significant if dealing an atom on the same level as `_insertiongIndex`. If we are at the beginning of a level, we need special behavior specified by the different `if` blocks in `deleteBackward`.
+ */
+- (void) adjustInsertionIndexBasedOnPreviousIndex
+{
+    MTMathListIndex* prevIndex = _insertionIndex.previous;
+    if (prevIndex == nil) {
+        return;
+    }
+    
+    // This order is significant. Do not alter it without changing behavior of deletion.
+    NSArray *subIndexTypesInOrder = @[
+        [NSNumber numberWithInt:kMTSubIndexTypeSubscript],
+        [NSNumber numberWithInt:kMTSubIndexTypeSuperscript],
+        [NSNumber numberWithInt:kMTSubIndexTypeRadicand],
+        [NSNumber numberWithInt:kMTSubIndexTypeDegree],
+        [NSNumber numberWithInt:kMTSubIndexTypeDenominator],
+        [NSNumber numberWithInt:kMTSubIndexTypeNumerator]];
+    
+    for (NSNumber *subIndexType in subIndexTypesInOrder) {
+        
+        MTMathListIndex* levelUpIndex = [prevIndex levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:(MTMathListSubIndexType)subIndexType.intValue];
+        MTMathAtom* atom = [self.mathList atomAtListIndex:levelUpIndex];
+        
+        if (atom != nil) {
+            _insertionIndex = [self getLastAtomInLevel:levelUpIndex];
+            [self adjustInsertionIndexBasedOnPreviousIndex];
+            break;
+        }
+    }
+    
+    return;
+}
+
+/**
+    Get last atom on the same level as `startingIndex`.
+ */
+- (MTMathListIndex*) getLastAtomInLevel:(MTMathListIndex*) startingIndex
+{
+    MTMathListIndex* nextIndex = startingIndex.next;
+    MTMathAtom* nextAtom = [self.mathList atomAtListIndex:startingIndex];
+    while (nextAtom != nil) {
+        nextAtom = [self.mathList atomAtListIndex:nextIndex];
+        if (nextAtom != nil) {
+            nextIndex = nextIndex.next;
+        }
+    }
+    
+    return nextIndex;
+}
+
+/**
+    Perform common tasks post character deletion.
+ */
+- (void) postDeletionCommon
+{
+    if (_insertionIndex.isAtBeginningOfLine && _insertionIndex.subIndexType != kMTSubIndexTypeNone) {
+        // We have deleted to the beginning of the line and it is not the outermost line
+        MTMathAtom* atom = [self.mathList atomAtListIndex:_insertionIndex];
+        if (!atom) {
+            // add a placeholder if we deleted everything in the list
+            atom = [MTMathAtomFactory placeholder];
+            // mark the placeholder as selected since that is the current insertion point.
+            atom.nucleus = MTSymbolBlackSquare;
+            [self.mathList insertAtom:atom atListIndex:_insertionIndex];
+        }
+    }
+    
+    self.label.mathList = self.mathList;
+    [self insertionPointChanged];
+    if ([self.delegate respondsToSelector:@selector(textModified:)]) {
+        [self.delegate textModified:self];
     }
 }
 
