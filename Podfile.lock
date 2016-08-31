@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   iosMath:
-    :commit: c1315386d74516eab6fa3f74b7ef3ab6c6df61f9
+    :commit: 3f2ee0b0106e7ac88b7a03f92774eca1206e7f93
     :git: https://github.com/socraticorg/iosMath.git
 
 SPEC CHECKSUMS:

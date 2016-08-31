@@ -28,6 +28,8 @@
     self.mathLabel.layer.cornerRadius = 5;
     self.mathLabel.textColor = [UIColor blackColor];
     self.mathLabel.textAlignment = kMTTextAlignmentCenter;
+    self.mathLabel.caretColor = [UIColor blueColor];
+    self.mathLabel.placeholderColor = [UIColor blueColor];
     self.mathLabel.keyboard = [MTScrollingMathKeyboardRootView sharedInstance];
 //    self.mathLabel.keyboard = [MTMathKeyboardRootView sharedInstance];
 

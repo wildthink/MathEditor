@@ -92,11 +92,12 @@
     _flipTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0, -1.0), transform);
 
     _caretView = [[MTCaretView alloc] initWithEditor:self];
-    _caretView.caretColor = [UIColor colorWithWhite:0.1 alpha:1.0];
+    _caretView.caretColor = self.caretColor;
 
     _indicesToHighlight = [NSMutableArray array];
     _highlightColor = [UIColor colorWithRed:0.8 green:0 blue:0.0 alpha:1.0];
     _textColor = [UIColor blackColor]; // Default text color
+    _placeholderColor = _textColor;
     [self bringSubviewToFront:self.cancelImage];
     
     // start with an empty math list
@@ -140,8 +141,16 @@
     self.label.textColor = textColor;
 }
 
+- (void)setPlaceholderColor:(UIColor *)placeholderColor {
+    self.label.placeholderColor = placeholderColor;
+}
+
 - (void)setTextAlignment:(MTTextAlignment)textAlignment {
     self.label.textAlignment = textAlignment;
+}
+
+- (void)setCaretColor:(UIColor *)caretColor {
+    _caretView.caretColor = caretColor;
 }
 
 - (CGFloat)fontSize
