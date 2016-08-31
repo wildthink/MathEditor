@@ -97,6 +97,7 @@
     _indicesToHighlight = [NSMutableArray array];
     _highlightColor = [UIColor colorWithRed:0.8 green:0 blue:0.0 alpha:1.0];
     _textColor = [UIColor blackColor]; // Default text color
+    _placeholderColor = _textColor;
     [self bringSubviewToFront:self.cancelImage];
     
     // start with an empty math list
@@ -138,6 +139,10 @@
 
 - (void)setTextColor:(UIColor *)textColor {
     self.label.textColor = textColor;
+}
+
+- (void)setPlaceholderColor:(UIColor *)placeholderColor {
+    self.label.placeholderColor = placeholderColor;
 }
 
 - (void)setTextAlignment:(MTTextAlignment)textAlignment {

@@ -74,6 +74,7 @@
 @property (nonatomic) MTMathList* mathList;
 @property (nonatomic) UIColor* highlightColor;
 @property (nonatomic) UIColor* textColor;
+@property (nonatomic) UIColor* placeholderColor;
 @property (nonatomic) MTTextAlignment textAlignment;
 
 @property (nonatomic) UIImageView* cancelImage;
