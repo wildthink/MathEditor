@@ -786,12 +786,12 @@
 
 - (void) insertText:(NSString*) str
 {
-    if ([str isEqualToString:@"\n"]) {
-        if ([self.delegate respondsToSelector:@selector(returnPressed:)]) {
-            [self.delegate returnPressed:self];
-        }
-        return;
-    }
+//    if ([str isEqualToString:@"\n"]) {
+//        if ([self.delegate respondsToSelector:@selector(returnPressed:)]) {
+//            [self.delegate returnPressed:self];
+//        }
+//        return;
+//    }
 
     if (str.length == 0) {
         NSLog(@"Encounter key with 0 length string: %@", str);
@@ -802,7 +802,7 @@
     MTMathAtom* atom;
     if (str.length > 1) {
         // Check if this is a supported command
-        NSDictionary* commands = [MTMathListBuilder supportedCommands];
+        NSDictionary* commands = [MTMathAtomFactory supportedLatexSymbolNames];
         MTMathAtom* factoryAtom = commands[str];
         atom = [factoryAtom copy]; // Make a copy here since atoms are mutable and we don't want to update the atoms in the map.
     } else {
@@ -833,6 +833,9 @@
     } else if ([str isEqualToString:@"||"]) {
         [self removePlaceholderIfPresent];
         [self insertAbsValue];
+    } else if ([str isEqualToString:@"\n"]) {
+        [self removePlaceholderIfPresent];
+        [self insertNewLine];
     } else if (atom) {
         if (![self updatePlaceholderIfPresent:atom]) {
             // If a placeholder wasn't updated then insert the new element.
@@ -870,6 +873,22 @@
     }
 
     return NO;
+}
+
+- (void) insertNewLine
+{
+    MTMathTable* mathTable = [[MTMathTable alloc] initWithEnvironment:nil];
+    [mathTable setAlignment:kMTColumnAlignmentLeft forColumn:0];
+    [mathTable setCell:self.mathList forRow:0 column:0];
+    
+    MTMathList* secondRow = [MTMathList new];
+    [secondRow addAtom:[MTMathAtomFactory placeholder]];
+    [mathTable setCell:secondRow forRow:1 column:0];
+    
+    MTMathList *newMathList = [MTMathList new];
+    [newMathList addAtom:mathTable];
+    
+    self.mathList = newMathList;
 }
 
 - (void) insertParens
