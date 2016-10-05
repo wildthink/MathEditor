@@ -912,7 +912,7 @@
             MTMathListIndex* downIndex = prevIndex.levelDown;
             MTMathAtom *currentAtom = [self.mathList atomAtListIndex:prevIndex];
             // Removing from an atom with a subscript or superscript can result in an empty nucleus. in that case, we want to put a placeholder
-            if (downIndex.previous && currentAtom.nucleus != @"") {
+            if (downIndex.previous && ![currentAtom.nucleus isEqualToString:@""]) {
                 prevIndex = [downIndex.previous levelUpWithSubIndex:[MTMathListIndex level0Index:1] type:kMTSubIndexTypeNucleus];
             } else {
                 MTMathAtom *atom = [MTMathAtomFactory placeholder];
