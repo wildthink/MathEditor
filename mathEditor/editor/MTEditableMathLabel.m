@@ -910,10 +910,21 @@
         if (prevIndex.finalSubIndexType == kMTSubIndexTypeNucleus) {
             // it was in the nucleus and we removed it, get out of the nucleus and get in the nucleus of the previous one.
             MTMathListIndex* downIndex = prevIndex.levelDown;
-            if (downIndex.previous) {
+            MTMathAtom *currentAtom = [self.mathList atomAtListIndex:prevIndex];
+            // Removing from an atom with a subscript or superscript can result in an empty nucleus. in that case, we want to put a placeholder
+            if (downIndex.previous && ![currentAtom.nucleus isEqualToString:@""]) {
                 prevIndex = [downIndex.previous levelUpWithSubIndex:[MTMathListIndex level0Index:1] type:kMTSubIndexTypeNucleus];
             } else {
-                prevIndex = downIndex;
+                MTMathAtom *atom = [MTMathAtomFactory placeholder];
+                // mark the placeholder as selected since that is the current insertion point.
+                atom.nucleus = MTSymbolBlackSquare;
+                [self.mathList insertAtom:atom atListIndex:prevIndex];
+                
+                // Insertion of the placeholder may push an empty nucleus atom to the next index which screw things up royally. Remove it if that's the case.
+                MTMathAtom *nextAtom = [self.mathList atomAtListIndex:downIndex.next];
+                if (nextAtom != nil && [nextAtom.nucleus isEqualToString:@""]) {
+                    [self.mathList removeAtomAtListIndex:downIndex.next];
+                }
             }
         }
         _insertionIndex = prevIndex;
@@ -1017,12 +1028,13 @@
     Adjust `_insertionIndex` based on the previous index on the same level. This is important in the cases where user's cursor is right after a complex atom like radical, subscript, superscript, etc.
     We move in the order specified by `subIndexTypesInOrder`. For example, if the user has a cursor after ( (6/5)^2[CURSOR] ), after hitting delete we will delete from superscript. Denominator would be next, then numerator.
  
-    This function is only significant if dealing an atom on the same level as `_insertiongIndex`. If we are at the beginning of a level, we need special behavior specified by the different `if` blocks in `deleteBackward`.
+    This function is only significant if dealing an atom on the same level as `_insertionIndex`. If we are at the beginning of a level, we need special behavior specified by the different `if` blocks in `deleteBackward`.
  */
 - (void) adjustInsertionIndexBasedOnPreviousIndex
 {
     MTMathListIndex* prevIndex = _insertionIndex.previous;
-    if (prevIndex == nil) {
+    // We have to treat the nucleus subtype differently
+    if (prevIndex == nil || _insertionIndex.finalSubIndexType == kMTSubIndexTypeNucleus) {
         return;
     }
     
