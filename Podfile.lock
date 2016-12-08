@@ -1,5 +1,5 @@
 PODS:
-  - iosMath (0.8.4)
+  - iosMath (0.9.1)
   - MathEditor (0.2.0):
     - iosMath
 
@@ -15,11 +15,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   iosMath:
-    :commit: 3f2ee0b0106e7ac88b7a03f92774eca1206e7f93
+    :commit: 46e8a335883b1056e37e0244f1bb52f02c913313
     :git: https://github.com/socraticorg/iosMath.git
 
 SPEC CHECKSUMS:
-  iosMath: 452a1f158b6aad6b462263b666f24a233a168fbb
+  iosMath: 1e313c5a75939b95863bd64c196c605e73ea5a63
   MathEditor: 2f11aeb734342651fc9b6b2cd2d5407016102725
 
 PODFILE CHECKSUM: cd223f387574ecfaf294a67e66758e739c0365f9

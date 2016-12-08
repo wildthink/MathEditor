@@ -83,8 +83,6 @@
 @property (nonatomic, weak) UIView<MTMathKeyboard>* keyboard;
 @property (nonatomic) UILabel* errorLabel;
 @property (nonatomic) CGFloat fontSize;
-@property (nonatomic) CGFloat paddingBottom;
-@property (nonatomic) CGFloat paddingTop;
 @property (nonatomic) UIColor* caretColor;
 
 - (void) clear;

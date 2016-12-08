@@ -158,26 +158,6 @@
     return self.label.fontSize;
 }
 
-- (void)setPaddingBottom:(CGFloat)paddingBottom
-{
-    self.label.paddingBottom = paddingBottom;
-}
-
-- (CGFloat)paddingBottom
-{
-    return self.label.paddingBottom;
-}
-
-- (void)setPaddingTop:(CGFloat)paddingTop
-{
-    self.label.paddingTop = paddingTop;
-}
-
-- (CGFloat)paddingTop
-{
-    return self.label.paddingTop;
-}
-
 - (CGSize) mathDisplaySize
 {
     return [self.label sizeThatFits:self.label.bounds.size];
@@ -802,7 +782,7 @@
     MTMathAtom* atom;
     if (str.length > 1) {
         // Check if this is a supported command
-        NSDictionary* commands = [MTMathListBuilder supportedCommands];
+        NSDictionary* commands = [MTMathAtomFactory supportedLatexSymbolNames];
         MTMathAtom* factoryAtom = commands[str];
         atom = [factoryAtom copy]; // Make a copy here since atoms are mutable and we don't want to update the atoms in the map.
     } else {
