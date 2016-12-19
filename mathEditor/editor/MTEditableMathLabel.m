@@ -782,8 +782,7 @@
     MTMathAtom* atom;
     if (str.length > 1) {
         // Check if this is a supported command
-        NSDictionary* commands = [MTMathAtomFactory supportedLatexSymbolNames];
-        MTMathAtom* factoryAtom = commands[str];
+        MTMathAtom* factoryAtom = [MTMathAtomFactory atomForLatexSymbolName:str];
         atom = [factoryAtom copy]; // Make a copy here since atoms are mutable and we don't want to update the atoms in the map.
     } else {
         atom = [self atomForCharacter:ch];
