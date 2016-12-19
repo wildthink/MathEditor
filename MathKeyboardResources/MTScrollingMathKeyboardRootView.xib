@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -24,7 +28,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTt-pq-YYi" userLabel="Model Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="XTt-pq-YYi" secondAttribute="height" multiplier="1:1" id="VF4-ns-wWe"/>
                                             </constraints>
@@ -35,7 +39,7 @@
                                         </button>
                                         <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-FI-Dzc" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="4"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="eoU-H6-rzA"/>
@@ -43,7 +47,7 @@
                                         </button>
                                         <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcX-a4-fCy" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="1"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="63Y-wI-QYR"/>
@@ -51,14 +55,14 @@
                                         </button>
                                         <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjM-oA-XSY" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="175" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="0"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="x70-N5-fTU"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="UcX-a4-fCy" firstAttribute="width" secondItem="XTt-pq-YYi" secondAttribute="width" id="5w3-UA-Zd5"/>
                                         <constraint firstItem="kaA-FI-Dzc" firstAttribute="height" secondItem="XTt-pq-YYi" secondAttribute="height" id="6jB-HH-9OU"/>
@@ -83,7 +87,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9A-VG-Pgg" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="r9A-VG-Pgg" secondAttribute="height" multiplier="1:1" id="jem-DH-l9v"/>
                                             </constraints>
@@ -94,7 +98,7 @@
                                         </button>
                                         <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV5-20-lKm" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="5"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="CIj-go-evf"/>
@@ -102,7 +106,7 @@
                                         </button>
                                         <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4f-LS-OGI" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="2"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="WjD-cr-Gqd"/>
@@ -110,14 +114,14 @@
                                         </button>
                                         <button opaque="NO" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-l2-NQ1" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="175" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Negative"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="w4U-8c-yyM"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="cV5-20-lKm" firstAttribute="height" secondItem="r9A-VG-Pgg" secondAttribute="height" id="GYM-0N-KOx"/>
                                         <constraint firstItem="d4f-LS-OGI" firstAttribute="centerX" secondItem="Nll-Ia-6uT" secondAttribute="centerX" id="Jma-9C-CJS"/>
@@ -140,7 +144,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08P-uw-hm9" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="08P-uw-hm9" secondAttribute="height" multiplier="1:1" id="rxu-82-DX8"/>
                                             </constraints>
@@ -151,7 +155,7 @@
                                         </button>
                                         <button opaque="NO" tag="109" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOO-TU-EKz" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="6"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="3ga-MA-dmB"/>
@@ -159,7 +163,7 @@
                                         </button>
                                         <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsh-jO-gtE" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="3"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="6wC-Vg-rbz"/>
@@ -167,14 +171,14 @@
                                         </button>
                                         <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydY-By-Q49" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="175" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Equals"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="eJu-Az-flx"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="tsh-jO-gtE" firstAttribute="height" secondItem="08P-uw-hm9" secondAttribute="height" id="A7c-1f-i12"/>
                                         <constraint firstItem="08P-uw-hm9" firstAttribute="centerX" secondItem="PNY-eh-Rbq" secondAttribute="centerX" id="A7s-M9-7if"/>
@@ -197,7 +201,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="112" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCq-k2-FR6" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="TCq-k2-FR6" secondAttribute="height" multiplier="1:1" id="RyP-wX-fD7"/>
                                             </constraints>
@@ -208,7 +212,7 @@
                                         </button>
                                         <button opaque="NO" tag="113" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkb-Ur-1te" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Multiply"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="geB-pr-PdX"/>
@@ -216,7 +220,7 @@
                                         </button>
                                         <button opaque="NO" tag="114" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tq-M7-8Mb" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Add"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="6K8-n4-0ps"/>
@@ -224,14 +228,14 @@
                                         </button>
                                         <button opaque="NO" tag="115" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxX-Qn-4sW" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="175" width="45" height="45"/>
-                                            <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Subtract"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="YQd-Bw-2FJ"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="kkb-Ur-1te" firstAttribute="centerX" secondItem="6x5-00-wI4" secondAttribute="centerX" id="B1J-wa-Pil"/>
                                         <constraint firstItem="6Tq-M7-8Mb" firstAttribute="centerX" secondItem="6x5-00-wI4" secondAttribute="centerX" id="Brw-AW-MGE"/>
@@ -254,7 +258,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="116" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kql-50-ya4" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="kql-50-ya4" secondAttribute="height" multiplier="1:1" id="JGH-80-SL5"/>
                                             </constraints>
@@ -265,7 +269,7 @@
                                         </button>
                                         <button opaque="NO" tag="117" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5v-3o-t3b" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="y var"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="ntZ-SG-MKf"/>
@@ -273,7 +277,7 @@
                                         </button>
                                         <button opaque="NO" tag="118" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3f-aF-wl2" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Forward slash"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="XZO-Jb-UG2"/>
@@ -281,14 +285,14 @@
                                         </button>
                                         <button opaque="NO" tag="119" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mT1-6t-MXL" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="175" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Period"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="op6-JT-PHG"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="mT1-6t-MXL" firstAttribute="centerX" secondItem="POk-AS-6gN" secondAttribute="centerX" id="0BJ-Na-guh"/>
                                         <constraint firstItem="H5v-3o-t3b" firstAttribute="height" secondItem="kql-50-ya4" secondAttribute="height" id="68g-yu-h1T"/>
@@ -311,7 +315,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="120" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDI-5r-nde" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="xDI-5r-nde" secondAttribute="height" multiplier="1:1" id="RH5-5l-qid"/>
                                             </constraints>
@@ -322,7 +326,7 @@
                                         </button>
                                         <button opaque="NO" tag="121" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T48-Xx-LCn" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Gx"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="EuM-kn-VNw"/>
@@ -330,7 +334,7 @@
                                         </button>
                                         <button opaque="NO" tag="122" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iT8-2v-hpH" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Caret"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="jaz-bT-dYI"/>
@@ -338,14 +342,14 @@
                                         </button>
                                         <button opaque="NO" tag="123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-2z-b6W" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="175" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Comma"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Csa-Yt-Nwf"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="g6i-2z-b6W" firstAttribute="centerY" secondItem="lep-h8-7Oa" secondAttribute="centerY" multiplier="7:4" id="6KL-2Q-idO"/>
                                         <constraint firstItem="iT8-2v-hpH" firstAttribute="centerX" secondItem="lep-h8-7Oa" secondAttribute="centerX" id="6ln-sk-9QU"/>
@@ -368,7 +372,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="124" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xj-SO-oxk" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="3xj-SO-oxk" secondAttribute="height" multiplier="1:1" id="gbh-GB-Bkf"/>
                                             </constraints>
@@ -379,7 +383,7 @@
                                         </button>
                                         <button opaque="NO" tag="125" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieK-Er-Ybc" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Fraction blue"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ixy-2s-Xld"/>
@@ -387,14 +391,14 @@
                                         </button>
                                         <button opaque="NO" tag="126" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37c-zV-jxp" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Sqrt blue"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="fN5-hY-f2H"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="37c-zV-jxp" firstAttribute="centerX" secondItem="CQR-lZ-KlW" secondAttribute="centerX" id="3z6-Sr-BXG"/>
                                         <constraint firstItem="3xj-SO-oxk" firstAttribute="centerX" secondItem="CQR-lZ-KlW" secondAttribute="centerX" id="Dbt-ro-Mzx"/>
@@ -413,7 +417,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="128" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwm-ZV-6Se" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Xwm-ZV-6Se" secondAttribute="height" multiplier="1:1" id="1ah-o7-za5"/>
                                             </constraints>
@@ -424,7 +428,7 @@
                                         </button>
                                         <button opaque="NO" tag="129" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-AY-aAb" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Absolute Value"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="0Gp-Kx-PI6"/>
@@ -432,14 +436,14 @@
                                         </button>
                                         <button opaque="NO" tag="130" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="had-GQ-8g4" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Nrt"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="QM1-sZ-p0f"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="Xwm-ZV-6Se" firstAttribute="centerX" secondItem="yof-Wn-uTg" secondAttribute="centerX" id="2wv-Jx-RJo"/>
                                         <constraint firstItem="had-GQ-8g4" firstAttribute="width" secondItem="Xwm-ZV-6Se" secondAttribute="width" id="9X9-uq-K1C"/>
@@ -458,7 +462,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="132" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpI-QJ-uE8" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="MpI-QJ-uE8" secondAttribute="height" multiplier="1:1" id="Bdf-0U-aDr"/>
                                             </constraints>
@@ -469,7 +473,7 @@
                                         </button>
                                         <button opaque="NO" tag="133" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meQ-kP-gWg" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Bracket-left"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="MuR-qW-Mfh"/>
@@ -477,14 +481,14 @@
                                         </button>
                                         <button opaque="NO" tag="134" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IE-LP-lWn" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Curley bracket-left"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="iFG-BE-idg"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="meQ-kP-gWg" firstAttribute="width" secondItem="MpI-QJ-uE8" secondAttribute="width" id="9ks-tS-GQN"/>
                                         <constraint firstItem="4IE-LP-lWn" firstAttribute="centerX" secondItem="q2V-xm-YpW" secondAttribute="centerX" id="A9n-2S-XCR"/>
@@ -503,7 +507,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="136" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmW-BL-doj" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="DmW-BL-doj" secondAttribute="height" multiplier="1:1" id="iiO-T3-UEE"/>
                                             </constraints>
@@ -514,7 +518,7 @@
                                         </button>
                                         <button opaque="NO" tag="137" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDU-nw-X3A" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Bracket-right"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="uii-BW-P7d"/>
@@ -522,14 +526,14 @@
                                         </button>
                                         <button opaque="NO" tag="138" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2F-Rl-etd" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Curley bracket-right"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="gfy-36-SKc"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="DmW-BL-doj" firstAttribute="centerY" secondItem="c9S-rM-ctt" secondAttribute="centerY" multiplier="1:4" id="DE1-NJ-u3l"/>
                                         <constraint firstItem="C2F-Rl-etd" firstAttribute="centerY" secondItem="c9S-rM-ctt" secondAttribute="centerY" multiplier="5:4" id="EhG-wp-Xun"/>
@@ -548,7 +552,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="140" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA8-rj-ytC" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="aA8-rj-ytC" secondAttribute="height" multiplier="1:1" id="UHB-Av-8Rv"/>
                                             </constraints>
@@ -559,7 +563,7 @@
                                         </button>
                                         <button opaque="NO" tag="141" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVY-o5-PfC" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Greater than equal"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="wPR-Wi-fGf"/>
@@ -567,14 +571,14 @@
                                         </button>
                                         <button opaque="NO" tag="142" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ql-bH-cOW" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Equal"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="vdg-f7-dqM"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="dVY-o5-PfC" firstAttribute="centerX" secondItem="xXw-pQ-7cA" secondAttribute="centerX" id="7pi-z1-3JG"/>
                                         <constraint firstItem="7Ql-bH-cOW" firstAttribute="centerX" secondItem="xXw-pQ-7cA" secondAttribute="centerX" id="Fnz-j8-ap2"/>
@@ -593,7 +597,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="144" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gct-GA-gt4" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Gct-GA-gt4" secondAttribute="height" multiplier="1:1" id="UNe-Oy-Gzp"/>
                                             </constraints>
@@ -604,7 +608,7 @@
                                         </button>
                                         <button opaque="NO" tag="145" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TK9-bv-LjW" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Less than equal"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="aFg-4M-sDm"/>
@@ -612,14 +616,14 @@
                                         </button>
                                         <button opaque="NO" tag="146" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oId-1D-aBG" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Not equal"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="X6y-E3-Wvc"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="TK9-bv-LjW" firstAttribute="height" secondItem="Gct-GA-gt4" secondAttribute="height" id="3UZ-0y-Ygn"/>
                                         <constraint firstItem="oId-1D-aBG" firstAttribute="centerY" secondItem="1Q2-1D-U2Y" secondAttribute="centerY" multiplier="5:4" id="JWn-Ic-r5X"/>
@@ -638,7 +642,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="148" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0O-W9-usk" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="h0O-W9-usk" secondAttribute="height" multiplier="1:1" id="ilA-kI-vdL"/>
                                             </constraints>
@@ -649,7 +653,7 @@
                                         </button>
                                         <button opaque="NO" tag="149" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M2-bc-oWK" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Csc"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="ndh-7k-8Ka"/>
@@ -657,7 +661,7 @@
                                         </button>
                                         <button opaque="NO" tag="150" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Doz-bX-brj" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Pi"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="PLT-4Z-6Dz"/>
@@ -665,14 +669,14 @@
                                         </button>
                                         <button opaque="NO" tag="151" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zz-kC-8mP" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="175" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Degree"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="lbg-H2-M0p"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="Doz-bX-brj" firstAttribute="width" secondItem="h0O-W9-usk" secondAttribute="width" id="093-rb-sBZ"/>
                                         <constraint firstItem="2Zz-kC-8mP" firstAttribute="height" secondItem="h0O-W9-usk" secondAttribute="height" id="1Gp-R2-K4c"/>
@@ -695,7 +699,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="152" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVS-of-FbH" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="6" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="yVS-of-FbH" secondAttribute="height" multiplier="1:1" id="a6A-bM-wqg"/>
                                             </constraints>
@@ -706,7 +710,7 @@
                                         </button>
                                         <button opaque="NO" tag="153" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omd-8L-hlm" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="62" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Sec"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="U6K-Kw-b5y"/>
@@ -714,7 +718,7 @@
                                         </button>
                                         <button opaque="NO" tag="154" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9s-fF-gpO" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="119" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Theta"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mak-Mv-xf6"/>
@@ -722,14 +726,14 @@
                                         </button>
                                         <button opaque="NO" tag="155" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkG-pv-7n4" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="1" y="175" width="45" height="45"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Angle"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="C1b-FB-mCO"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="yVS-of-FbH" firstAttribute="centerX" secondItem="lrE-qV-qxQ" secondAttribute="centerX" id="6FI-pa-dze"/>
                                         <constraint firstItem="SkG-pv-7n4" firstAttribute="width" secondItem="yVS-of-FbH" secondAttribute="width" id="IOL-hc-Ib6"/>
@@ -752,7 +756,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="156" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD5-d1-diV" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="2" y="7" width="43" height="43"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UD5-d1-diV" secondAttribute="height" multiplier="1:1" id="Ucf-zq-l8B"/>
                                             </constraints>
@@ -763,14 +767,14 @@
                                         </button>
                                         <button opaque="NO" tag="157" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgL-4W-dtT" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="2" y="63" width="43" height="43"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Cot"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="GBA-vB-zT5"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="UD5-d1-diV" firstAttribute="centerX" secondItem="uCa-O9-WYM" secondAttribute="centerX" id="WBq-hz-mSe"/>
                                         <constraint firstItem="UD5-d1-diV" firstAttribute="centerY" secondItem="uCa-O9-WYM" secondAttribute="centerY" multiplier="1:4" id="hge-is-7Ey"/>
@@ -785,7 +789,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="160" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yod-aS-Hyp" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="2" y="7" width="43" height="43"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="yod-aS-Hyp" secondAttribute="height" multiplier="1:1" id="rcI-Cl-1jK"/>
                                             </constraints>
@@ -796,14 +800,14 @@
                                         </button>
                                         <button opaque="NO" tag="161" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osw-2f-i7u" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="2" y="63" width="43" height="43"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="Ln"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vvj-kW-VYw"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="yod-aS-Hyp" firstAttribute="centerY" secondItem="mdC-io-N31" secondAttribute="centerY" multiplier="1:4" id="7on-m1-Ygs"/>
                                         <constraint firstItem="osw-2f-i7u" firstAttribute="centerY" secondItem="mdC-io-N31" secondAttribute="centerY" multiplier="3:4" id="8cy-ND-n38"/>
@@ -818,7 +822,7 @@
                                     <subviews>
                                         <button opaque="NO" tag="164" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8b-YJ-Txb" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="2" y="7" width="43" height="43"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="s8b-YJ-Txb" secondAttribute="height" multiplier="1:1" id="GgL-fm-Wyn"/>
                                             </constraints>
@@ -829,14 +833,14 @@
                                         </button>
                                         <button opaque="NO" tag="165" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnb-Rp-Bd6" userLabel="Button" customClass="MTKeyboardKeyButton">
                                             <rect key="frame" x="2" y="63" width="43" height="43"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="e"/>
                                             <connections>
                                                 <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="ydg-ze-cJP"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="bnb-Rp-Bd6" firstAttribute="centerY" secondItem="D1E-pJ-uab" secondAttribute="centerY" multiplier="3:4" id="2wL-em-gQQ"/>
                                         <constraint firstItem="bnb-Rp-Bd6" firstAttribute="height" secondItem="s8b-YJ-Txb" secondAttribute="height" id="B4H-Fl-DSW"/>
@@ -853,87 +857,87 @@
                                             <rect key="frame" x="0.0" y="6" width="320" height="45"/>
                                             <subviews>
                                                 <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyr-Um-unX" userLabel="Model button" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="2.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="2.6666666666666288" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="q"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="jjs-RQ-Tyv"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrz-TQ-e4V" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="34.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="34.666666666666629" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="w"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="hcq-uo-yGH"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iL4-u3-oWC" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="66.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="66.666666666666629" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="e"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="sXy-T2-KEv"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtA-u1-LOC" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="98.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="98.666666666666629" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="r"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="DVx-ud-h5M"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BX-Cn-EE9" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="130.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="130.66666666666663" y="0.0" width="27.000000000000114" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="t"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Z1i-qp-gZP"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATW-Z4-B31" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="162.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="162.66666666666674" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="y"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="kkh-ZS-0Q8"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7L-pB-dRL" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="194.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="194.66666666666674" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="u"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="FEx-xA-aVn"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzG-2Y-I5s" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="226.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="226.66666666666674" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="i"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="ztI-an-r1v"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1008" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJe-l4-gHW" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="258.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="258.66666666666674" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="o"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="n3M-Bt-sm5"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1009" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky5-UD-xJZ" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="290.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="290.66666666666674" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="p"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="xVf-81-jth"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="p7L-pB-dRL" firstAttribute="width" secondItem="eyr-Um-unX" secondAttribute="width" id="0fI-c4-PfB"/>
                                                 <constraint firstItem="TtA-u1-LOC" firstAttribute="top" secondItem="eyr-Um-unX" secondAttribute="top" id="5uz-i4-y29"/>
@@ -970,79 +974,79 @@
                                             <rect key="frame" x="17" y="62" width="286" height="45"/>
                                             <subviews>
                                                 <button opaque="NO" tag="1010" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFk-Wr-zca" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="2.5" y="0.0" width="26.5" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="2.6666666666666288" y="0.0" width="26.333333333333371" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="a"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mya-V3-itn"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1011" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-uv-VOr" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="33.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="33.666666666666629" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="s"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Ga-a8-za6"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1012" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNP-WS-wKV" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="65.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="65.666666666666629" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="d"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="zYu-Nv-3Se"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1013" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETX-Sk-Nid" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="97.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="97.666666666666629" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="f"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="yPk-C3-I8d"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1014" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA0-rC-M0D" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="129.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="129.66666666666663" y="0.0" width="27.000000000000114" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="g"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="3ee-jd-w3V"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1015" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsM-Ni-Lpe" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="160.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="160.66666666666674" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="h"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="vzU-M6-hcZ"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1016" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahy-zz-nOx" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="192.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="192.66666666666674" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="j"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="FSL-xd-E1B"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1017" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgV-OK-TWU" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="224.5" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="224.66666666666674" y="0.0" width="27" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="k"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="YqX-wG-ZqN"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1018" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-q4-ETS" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="257" y="0.0" width="26.5" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="257" y="0.0" width="26.666666666666742" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="l"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="wxu-fd-5HD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="TA0-rC-M0D" firstAttribute="centerX" secondItem="bhg-Zo-tLV" secondAttribute="centerX" multiplier="9:9" id="052-vY-EDk"/>
                                                 <constraint firstItem="1uT-q4-ETS" firstAttribute="centerX" secondItem="bhg-Zo-tLV" secondAttribute="centerX" multiplier="17:9" id="0KQ-Aw-9pF"/>
@@ -1082,66 +1086,66 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ps-sf-dE3" userLabel="Row 3">
-                                            <rect key="frame" x="50.5" y="119" width="219" height="45"/>
+                                            <rect key="frame" x="50.666666666666629" y="119" width="219.00000000000011" height="45"/>
                                             <subviews>
                                                 <button opaque="NO" tag="1019" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-qK-Z5y" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="3" y="0.0" width="26.5" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="3.3333333333332575" y="0.0" width="26.333333333333371" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="z"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ir6-4H-5PL"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1020" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3q-ja-GJH" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="33" y="0.0" width="26.5" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="33.333333333333258" y="0.0" width="26.333333333333371" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="x"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="7ap-HT-zfy"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1021" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDX-S3-sdn" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="65" y="0.0" width="26.5" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="65.333333333333258" y="0.0" width="26.333333333333371" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="c"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="0gZ-au-LhY"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1022" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTw-gW-0UR" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="96" y="0.0" width="27" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="96.333333333333258" y="0.0" width="27.000000000000114" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="v"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="bf4-jn-d8h"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1023" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hb-al-p7v" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="127.5" y="0.0" width="26.5" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="127.66666666666663" y="0.0" width="26.666666666666742" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="b"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="rof-dh-Y5a"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1024" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASw-KQ-hHi" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="158.5" y="0.0" width="26.5" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="158.66666666666663" y="0.0" width="26.666666666666742" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="n"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="uhD-Mm-ns8"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1025" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuz-ZP-KGg" customClass="MTQwertyKeyboardKeyButton">
-                                                    <rect key="frame" x="190.5" y="0.0" width="26.5" height="45"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="190.66666666666663" y="0.0" width="26.666666666666742" height="45"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="m"/>
                                                     <connections>
                                                         <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZFy-Wz-rPO"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="uuz-ZP-KGg" firstAttribute="height" secondItem="Jkx-qK-Z5y" secondAttribute="height" id="0FK-VZ-Ac1"/>
                                                 <constraint firstItem="GDX-S3-sdn" firstAttribute="centerX" secondItem="1Ps-sf-dE3" secondAttribute="centerX" multiplier="5:7" id="0JK-fV-0Wr"/>
@@ -1173,7 +1177,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="eyr-Um-unX" firstAttribute="width" secondItem="OJo-NZ-cRN" secondAttribute="width" multiplier="1:12" id="5X1-uA-rJC"/>
                                         <constraint firstItem="ky5-UD-xJZ" firstAttribute="centerX" secondItem="OJo-NZ-cRN" secondAttribute="centerX" multiplier="19:10" id="8mX-tt-6zW"/>
@@ -1199,7 +1203,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="MpI-QJ-uE8" firstAttribute="width" secondItem="XTt-pq-YYi" secondAttribute="width" id="2AY-GA-wAv"/>
                                 <constraint firstItem="Nll-Ia-6uT" firstAttribute="width" secondItem="Cja-IM-uxo" secondAttribute="width" id="2Cl-Bf-LsY"/>
@@ -1294,7 +1298,7 @@
                             </constraints>
                         </scrollView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="VQv-SN-hlW" firstAttribute="top" secondItem="CSI-WM-BTY" secondAttribute="top" id="7oD-7Z-Ewc"/>
                         <constraint firstAttribute="bottom" secondItem="VQv-SN-hlW" secondAttribute="bottom" id="N4y-t5-GMx"/>
@@ -1304,7 +1308,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="CSI-WM-BTY" secondAttribute="bottom" id="QxB-Tm-6SD"/>
                 <constraint firstItem="CSI-WM-BTY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eMi-PH-oCZ"/>
@@ -1402,4 +1406,9 @@
         <image name="y var" width="42" height="43"/>
         <image name="z" width="31" height="43"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina5_5.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
