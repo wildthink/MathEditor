@@ -29,5 +29,6 @@
 
 @property (nonatomic, weak) id<MTMathSocraticInputAccessoryViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
+@property (weak, nonatomic) IBOutlet UIButton *clearButton;
 
 @end
