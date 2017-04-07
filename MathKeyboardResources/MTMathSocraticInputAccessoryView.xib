@@ -18,7 +18,6 @@
                     <rect key="frame" x="258" y="6.6666666666666661" width="54" height="32"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <state key="normal" title="Search"/>
-                    <state key="disabled" image="Search button disabled"/>
                     <connections>
                         <action selector="searchButtonTapped:" destination="Zzl-7M-lAH" eventType="touchUpInside" id="Ggj-7z-P0Z"/>
                     </connections>
@@ -58,6 +57,5 @@
     </objects>
     <resources>
         <image name="Delete button" width="39" height="32"/>
-        <image name="Search button disabled" width="94" height="38"/>
     </resources>
 </document>
